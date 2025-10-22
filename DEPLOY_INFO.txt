@@ -1,0 +1,14 @@
+Fecha de despliegue: Wed Oct 22 19:47:19 CEST 2025
+Versión: v22.20.0
+NPM: 10.9.3
+Build exitoso: ✅
+
+Archivos importantes:
+- .htaccess (configuración Apache)
+- .env.local (variables de entorno)
+- .next/ (build de producción)
+
+Para subir a Hostinger:
+1. Subir todos los archivos a public_html
+2. Configurar variables de entorno en el panel
+3. Verificar que el dominio esté configurado

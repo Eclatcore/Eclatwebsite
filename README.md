@@ -1,36 +1,117 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌟 Éclat Studio - Sitio Web
 
-## Getting Started
+Sitio web profesional para Éclat Studio, desarrollado con Next.js 15, Tailwind CSS y Framer Motion.
 
-First, run the development server:
+## ✨ Características
 
+- 🎨 **Diseño moderno** con gradientes y animaciones
+- 📱 **Totalmente responsive** para todos los dispositivos
+- ⚡ **Rendimiento optimizado** con Next.js 15
+- 📧 **Formulario de contacto funcional** con envío de emails
+- 🔒 **Páginas legales** (Aviso Legal, Política de Cookies, Política de Privacidad)
+- 🚀 **Despliegue automático** con GitHub Actions
+
+## 🛠️ Tecnologías
+
+- **Next.js 15** - Framework de React
+- **Tailwind CSS** - Framework de CSS
+- **Framer Motion** - Animaciones
+- **TypeScript** - Tipado estático
+- **Nodemailer** - Envío de emails
+- **GitHub Actions** - CI/CD
+
+## 🚀 Despliegue
+
+### Desarrollo Local
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Despliegue en Hostinger
+1. **Configurar GitHub** (ver `DESPLIEGUE-GITHUB-HOSTINGER.md`)
+2. **Configurar Hostinger** con Node.js
+3. **Configurar secrets** en GitHub
+4. **Push automático** despliega el sitio
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📧 Formulario de Contacto
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Destinatario principal**: `eclat@eclatcore.com`
+- **Copia automática**: `eclatcore2025@gmail.com`
+- **Configuración SMTP**: Hostinger
 
-## Learn More
+## 📁 Estructura del Proyecto
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/
+│   ├── components/          # Componentes reutilizables
+│   ├── layout/             # Header y Footer
+│   ├── legal/              # Páginas legales
+│   └── api/contact/        # API del formulario
+├── globals.css             # Estilos globales
+└── layout.tsx              # Layout principal
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔧 Configuración
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Variables de Entorno
+```env
+SMTP_HOST=smtp.hostinger.com
+SMTP_PORT=465
+SMTP_SECURE=true
+SMTP_USER=eclat@eclatcore.com
+SMTP_PASS=tu-contraseña
+MAIL_TO=eclat@eclatcore.com
+MAIL_FROM="Éclat Web" <eclat@eclatcore.com>
+```
 
-## Deploy on Vercel
+## 📚 Documentación
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `DESPLIEGUE-GITHUB-HOSTINGER.md` - Guía de despliegue con GitHub
+- `CONFIGURACION-EMAIL.md` - Configuración del formulario
+- `RESUMEN-DESPLIEGUE.md` - Resumen de despliegue
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🎯 Funcionalidades
+
+### ✅ Implementadas
+- [x] Diseño responsive completo
+- [x] Animaciones con Framer Motion
+- [x] Formulario de contacto funcional
+- [x] Páginas legales
+- [x] Optimización de rendimiento
+- [x] Despliegue automático
+- [x] Envío de emails a múltiples destinatarios
+
+### 🔄 Envío de Emails
+- **Validación** de campos obligatorios
+- **Diseño profesional** del email
+- **Múltiples destinatarios** (principal + copia)
+- **Configuración SMTP** de Hostinger
+
+## 🚀 Comandos Útiles
+
+```bash
+# Desarrollo
+npm run dev
+
+# Build de producción
+npm run build
+
+# Configurar GitHub
+./setup-github.sh
+
+# Despliegue manual
+./deploy.sh
+```
+
+## 📞 Soporte
+
+Para problemas o dudas:
+1. Revisar documentación en `/docs`
+2. Verificar logs en GitHub Actions
+3. Comprobar configuración en Hostinger
+
+## 🎉 ¡Listo para Producción!
+
+El sitio está completamente preparado para desplegar en Hostinger con GitHub Actions para un flujo de trabajo profesional y automatizado.
