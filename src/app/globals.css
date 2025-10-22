@@ -78,19 +78,19 @@ section, .absolute, .relative {
   opacity: 1;
 }
 
-/* Animaciones para carrusel infinito */
+/* Animaciones optimizadas para carrusel */
 @keyframes scroll-right-smooth {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
 @keyframes scroll-left-smooth {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
   100% {
     transform: translateX(0);
@@ -98,11 +98,11 @@ section, .absolute, .relative {
 }
 
 .animate-scroll-right-smooth {
-  animation: scroll-right-smooth 40s linear infinite;
+  animation: scroll-right-smooth 30s linear infinite;
 }
 
 .animate-scroll-left-smooth {
-  animation: scroll-left-smooth 45s linear infinite;
+  animation: scroll-left-smooth 35s linear infinite;
 }
 
 @layer components {
