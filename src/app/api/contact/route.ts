@@ -46,7 +46,7 @@ export async function POST(req: Request) {
     if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
       console.log('⚠️  Variables de entorno no configuradas - Solo guardando en consola');
       return NextResponse.json({ 
-        message: 'Mensaje recibido. Para envío real de emails, configurar SMTP_USER y SMTP_PASS en .env.local' 
+        message: 'Mensaje recibido correctamente. Para envío de emails, configurar variables de entorno en Vercel.' 
       });
     }
 
