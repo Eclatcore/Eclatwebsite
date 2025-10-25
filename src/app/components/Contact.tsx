@@ -58,7 +58,7 @@ const Contact = memo(function Contact() {
     };
 
     return (
-        <section id="contacto" className="relative min-h-[100vh] w-full overflow-hidden py-20">
+        <section id="contacto" className="relative min-h-[100vh] w-full overflow-hidden py-10 lg:py-20">
              {/* Background igual a Services */}
              <div className="absolute inset-0 -z-10">
                  {/* Gradiente horizontal (180 grados) */}
@@ -77,7 +77,7 @@ const Contact = memo(function Contact() {
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_30%,rgba(0,0,0,0.3)_100%)]" />
              </div>
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-4">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-4 max-w-7xl">
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}

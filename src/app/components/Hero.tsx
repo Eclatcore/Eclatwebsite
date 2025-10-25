@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { memo } from "react";
 import dynamic from "next/dynamic";
 
@@ -21,15 +20,15 @@ const Hero = memo(function Hero() {
       {/* contenido */}
       <div className="relative z-10">
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="font-heading text-4xl md:text-5xl lg:text-8xl leading-tight tracking-tight text-white"
+          className="font-heading text-4xl md:text-5xl lg:text-7xl leading-tight tracking-tight text-white"
         >
-          <span className="block">Impulsa tu negocio con </span>
-          <span className="bg-gradient-to-r from-primary via-primary/100 to-secondary bg-clip-text text-transparent"> 
-            webs modernas y efectivas
-          </span> 
+          <span className="block">Diseño y desarrollo web estratégico</span>
+          <span className="bg-gradient-to-r from-primary via-primary/100 to-secondary bg-clip-text text-transparent">
+          para negocios que buscan crecer
+          </span>
         </motion.h1>
 
         <motion.p
@@ -38,8 +37,7 @@ const Hero = memo(function Hero() {
           transition={{ delay: 0.1, duration: 0.4 }}
           className="mt-6 mb-8 max-w-2xl font-body text-lg text-white/80 mx-auto"
         >
-          Impulsamos tu negocio con diseño web, branding y soluciones digitales a medida.
-          Haz que tu marca brille, conecta con tus clientes y crece con estrategias efectivas.
+          En Éclat combinamos diseño UX/UI, desarrollo web y visión de negocio para crear experiencias digitales que generan impacto y resultados sostenibles.
         </motion.p>
 
         <motion.div
@@ -71,7 +69,7 @@ const Hero = memo(function Hero() {
           transition={{ delay: 0.3, duration: 0.4 }}
           className="mt-8 w-full flex justify-center"
         >
-          <Glass type="image" src="/background/mock-inside.jpg" alt="Preview" />
+          <Glass type="video" src="/videos/video-reunion.mp4" />
           {/* o con video:
         <GlassBox type="video" src="/media/demo.mp4" poster="/media/poster.jpg" />
         */}
@@ -83,5 +81,3 @@ const Hero = memo(function Hero() {
 });
 
 export default Hero;
-
-

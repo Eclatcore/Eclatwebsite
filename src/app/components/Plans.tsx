@@ -70,11 +70,11 @@ export default function Plans() {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-24">
+            <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-10">
                 {/* Header */}
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                     className="text-center mb-16"
@@ -104,7 +104,7 @@ export default function Plans() {
                 </motion.div>
 
                 {/* Plans Grid - Responsive */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16 items-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-6 gap-10 mb-12 sm:mb-16 items-center">
                     {plansData.map((plan, index) => (
                         <PlanCard
                             key={plan.title}
@@ -121,8 +121,8 @@ export default function Plans() {
 
                 {/* Banner precio reducido - MUY LLAMATIVO */}
                 <motion.div
-                    initial={{ opacity: 0, y: 30, scale: 0.95 }}
-                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                     className="group relative overflow-hidden rounded-2xl sm:rounded-3xl border-2 border-[#8b5cf6]/60 bg-gradient-to-br from-[#8b5cf6]/20 via-[#a78bfa]/15 to-[#c084fc]/20 backdrop-blur-2xl p-6 sm:p-8 lg:p-8 transition-all duration-500 hover:bg-gradient-to-br hover:from-[#8b5cf6]/25 hover:via-[#a78bfa]/20 hover:to-[#c084fc]/25 hover:border-[#8b5cf6]/80 hover:scale-[1.02] hover:shadow-[0_0_60px_rgba(139,92,246,0.4)] w-full"
@@ -143,8 +143,8 @@ export default function Plans() {
                     <div className="relative z-10 text-center">
                         {/* Título MUY LLAMATIVO */}
                         <motion.h3
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
                             className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-4xl text-white mb-4 sm:mb-6"
@@ -155,8 +155,8 @@ export default function Plans() {
                         </motion.h3>
                         {/* Descripción MUY LLAMATIVA */}
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
                             className="text-white/90 text-base sm:text-lg md:text-xl lg:text-2xl"

@@ -8,6 +8,8 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  font-family: var(--font-dm-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-display: swap;
 }
 
 /* Optimización de backgrounds */
@@ -69,12 +71,12 @@ section, .absolute, .relative {
 }
 
 
-/* Prevenir flash en elementos animados */
-[data-framer-motion] {
+/* Prevenir flash en elementos animados - solo para elementos específicos */
+[data-framer-motion]:not(body):not(html):not(main):not(section) {
   opacity: 0;
 }
 
-[data-framer-motion].motion-ready {
+[data-framer-motion].motion-ready:not(body):not(html):not(main):not(section) {
   opacity: 1;
 }
 
@@ -108,6 +110,14 @@ section, .absolute, .relative {
 @layer components {
   .font-exo {
     font-family: var(--font-exo), sans-serif;
+  }
+
+  .font-heading {
+    font-family: var(--font-dm-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  .font-body {
+    font-family: var(--font-montserrat), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 
   .glass {

@@ -51,7 +51,7 @@ const timelineSteps = [
 
 const Timeline = memo(function Timeline() {
   return (
-    <section id="proceso" className="relative min-h-[100vh] w-full overflow-hidden py-16 sm:py-20 lg:py-24">
+    <section id="proceso" className="relative min-h-[100vh] w-full overflow-hidden py-10 sm:py-20 lg:py-24">
       {/* Background con continuidad desde Services */}
       <div className="absolute inset-0 -z-10">
         {/* Gradiente sutil y elegante */}
@@ -71,11 +71,11 @@ const Timeline = memo(function Timeline() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-4">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-4">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-12 sm:mb-16"
@@ -100,8 +100,8 @@ const Timeline = memo(function Timeline() {
             {timelineSteps.map((step, index) => (
               <motion.div
                 key={step.id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: index * 0.1 }}
                 className={`relative flex flex-col lg:flex-row items-center ${
@@ -158,8 +158,8 @@ const Timeline = memo(function Timeline() {
 
         {/* Call to action */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
           className="text-center mt-12 sm:mt-16"

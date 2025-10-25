@@ -34,8 +34,8 @@ export default function PlanCard({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40, scale: isPremium ? 0.95 : 1 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay }}
       className={`group relative overflow-hidden rounded-2xl sm:rounded-3xl p-6 sm:p-8 transition-all duration-500 w-full max-w-md ${isPremium ? 'h-[550px] sm:h-[600px]' : 'h-[450px] sm:h-[500px]'} flex flex-col justify-center ${cardClasses}`}

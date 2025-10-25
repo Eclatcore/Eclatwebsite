@@ -27,22 +27,22 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-[60] w-full">
-      <div className="mx-auto max-w-7xl px-4 py-3">
-        <div className="relative overflow-hidden rounded-full border border-white/15 bg-black/10 shadow-lg backdrop-blur-xl backdrop-saturate-150 supports-[backdrop-filter:blur(0)]:bg-black/10 px-4 sm:px-6 lg:py-2">
+      <div className="mx-auto max-w-7xl px-6 py-3">
+        <div className="relative overflow-hidden rounded-full border border-white/15 bg-black/10 shadow-lg backdrop-blur-xl backdrop-saturate-150 supports-[backdrop-filter:blur(0)]:bg-black/10 px-6 py-4 lg:py-2">
           {/* liquid glass tint */}
           <div className="pointer-events-none absolute inset-0 opacity-60">
             <div className="absolute -left-24 -top-24 h-56 w-56 rounded-full bg-gradient-to-tr from-white/30 via-white/10 to-transparent blur-2xl" />
             <div className="absolute -bottom-24 -right-24 h-56 w-56 rounded-full bg-gradient-to-tr from-white/20 via-white/5 to-transparent blur-2xl" />
           </div>
 
-          <nav className="relative z-10 flex items-center justify-between px-2 sm:px-4 py-3">
+          <nav className="relative z-10 flex items-center justify-between">
             {/* Logo */}
             <Link 
               href="/" 
               className="flex items-center gap-3 hover:opacity-80 transition-opacity duration-300 hover:forced-color-adjust-none break-keep"
               onClick={closeMenu}
             >
-              <Logo className="h-20 w-34 sm:h-10"/>
+              <Logo className="lg:h-20 lg:w-34 h-10 w-10"/>
               <h2 className="text-3xl font-exo text-white">Éclat</h2>
             </Link>
 

@@ -73,7 +73,7 @@ const reasons = [
 
 const WhyChooseUs = memo(function WhyChooseUs() {
   return (
-    <section id="por-que-elegirnos" className="relative min-h-[100vh] w-full overflow-hidden py-16 sm:py-20 lg:py-24">
+    <section id="por-que-elegirnos" className="relative min-h-[100vh] w-full overflow-hidden py-10 sm:py-20 lg:py-24">
       {/* Background original y único */}
       <div className="absolute inset-0 -z-10">
         {/* Gradiente base con patrón geométrico */}
@@ -95,10 +95,10 @@ const WhyChooseUs = memo(function WhyChooseUs() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-4">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-4">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0}}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
@@ -119,8 +119,8 @@ const WhyChooseUs = memo(function WhyChooseUs() {
           {reasons.map((reason, index) => (
             <motion.div
               key={reason.id}
-              initial={{ opacity: 0, y: 40, rotateX: 15 }}
-              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+              initial={{ opacity: 0}}
+              whileInView={{ opacity: 1}}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: index * 0.1 }}
               className="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-black/30 via-[#1a0b2e]/20 to-black/40 backdrop-blur-2xl backdrop-saturate-150 p-6 sm:p-8 shadow-2xl transition-all duration-700 hover:border-[#8b5cf6]/30 hover:shadow-[0_25px_50px_-12px_rgba(139,92,246,0.4)] hover:scale-[1.03] hover:rotate-1"

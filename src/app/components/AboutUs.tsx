@@ -5,12 +5,12 @@ export default function AboutUs() {
   return (
     <section
       id="nosotros"
-      className="relative min-h-[100vh] w-full overflow-hidden flex flex-col items-center justify-center px-6"
+      className="relative min-h-[100vh] w-full overflow-hidden flex flex-col items-center justify-center px-6 py-10"
     >
       {/* Video de fondo */}
       <video
         className="absolute inset-0 h-full w-full object-cover z-0"
-        src="/videos/bg-aboutus.mp4"
+        src="/videos/video-hero.mp4"
         autoPlay
         loop
         muted
@@ -23,7 +23,7 @@ export default function AboutUs() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/70 to-black/70 z-10" />
 
       {/* Bloque 1: Título gigante e introducción */}
-      <div className="relative z-30 flex mb-10 w-full justify-start text-left max-w-7xl px-4">
+      <div className="relative z-30 flex mb-10 w-full justify-start text-left max-w-7xl px-0 lg:px-4">
         <div
           className="max-w-4xl text-white"
         >
@@ -33,7 +33,7 @@ export default function AboutUs() {
             whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
             viewport={{ once: true, amount: 0.6 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="will-change-[opacity,transform,filter] font-heading text-5xl md:text-7xl lg:text-7xl leading-[1.05] tracking-tight"
+            className="will-change-[opacity,transform,filter] font-heading text-4xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight"
           >
             <span className="relative inline-block group">
               <span className="bg-gradient-to-r from-[#8b5cf6] via-[#a78bfa] to-[#a78bfa] bg-clip-text text-transparent drop-shadow-[0_6px_30px_rgba(139,92,246,0.35)]">
@@ -42,7 +42,7 @@ export default function AboutUs() {
             </span>
           </motion.h2>
 
-          <p className="mt-6 text-lg md:text-xl text-white/85 w-[90%]">
+          <p className="mt-6 text-lg md:text-xl text-white/85 w-full lg:w-[90%]">
             Somos un estudio digital que combina estrategia, diseño y tecnología para impulsar
             el crecimiento de empresas ambiciosas. Construimos experiencias memorables enfocadas
             en resultados medibles y crecimiento sostenido.
@@ -51,7 +51,7 @@ export default function AboutUs() {
       </div>
 
       {/* Bloque 2: Más detalles, aparece al hacer scroll */}
-      <div className="relative z-30 mx-auto w-full max-w-7xl px-4">
+      <div className="relative z-30 mx-auto w-full max-w-7xl">
         <motion.div
           initial={{ y: 30 }}
           whileInView={{ y: 0 }}

@@ -5,20 +5,26 @@ import { DM_Sans, Montserrat, Exo } from "next/font/google";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "700"], // ajusta según lo que uses
+  weight: ["400", "500", "700"],
   variable: "--font-dm-sans",
+  display: "swap",
+  preload: true,
 });
 
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
   variable: "--font-montserrat",
+  display: "swap",
+  preload: true,
 });
 
 const exo = Exo({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-exo",
+  display: "swap",
+  preload: true,
 });
 
 

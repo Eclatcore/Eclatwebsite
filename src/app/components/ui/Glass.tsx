@@ -8,7 +8,7 @@ type Props =
   | { type: "video"; src: string; poster?: string; autoPlay?: boolean; loop?: boolean; muted?: boolean };
 
 const GlassMedia = memo(function GlassMedia(props: Props) {
-    const USE_VIDEO = false; 
+    const USE_VIDEO = props.type === "video"; 
   return (
     <section className="">
     {/* CONTENIDO */}
@@ -60,7 +60,7 @@ const GlassMedia = memo(function GlassMedia(props: Props) {
               
               {/* Video de fondo optimizado */}
               <video 
-                src="/videos/bg-aboutus.mp4" 
+                src={props.type === "video" ? props.src : "/videos/bg-aboutus.mp4"} 
                 autoPlay 
                 loop 
                 muted 

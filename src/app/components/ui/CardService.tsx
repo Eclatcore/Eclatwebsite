@@ -20,11 +20,10 @@ export default function CardService({
 }: CardServiceProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay }}
-      whileHover={{ y: 0}}
       className="group relative overflow-hidden rounded-3xl border border-white/20 bg-gradient-to-br from-white/8 via-white/5 to-white/3 p-8 backdrop-blur-2xl transition-all duration-500 hover:border-white/30 hover:shadow-2xl"
     >
       {/* Liquid glass background effects */}

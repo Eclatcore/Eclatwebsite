@@ -24,10 +24,10 @@ export default function Services() {
       </div>
       
       {/* Content */}
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-24">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-10 lg:py-20">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-center"

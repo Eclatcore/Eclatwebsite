@@ -10,7 +10,7 @@ const Glass = dynamic(() => import("./ui/Glass"), {
 
 const Showcase = memo(function Showcase() {
   return (
-    <section className="relative h-auto w-screen flex flex-col items-center justify-center px-4 text-center overflow-hidden py-20">
+    <section className="relative h-auto w-screen flex flex-col items-center justify-center px-6 text-center overflow-hidden py-10 lg:py-20">
       {/* Background con imagen y gradiente oscuro */}
       <div className="absolute inset-0 -z-10">
         {/* Imagen de fondo */}
@@ -38,10 +38,10 @@ const Showcase = memo(function Showcase() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.3 }}
-          className="font-heading text-5xl md:text-7xl lg:text-8xl leading-tight tracking-tight text-white"
+          className="font-heading text-4xl md:text-7xl lg:text-8xl leading-tight tracking-tight text-white"
         >
           Descubre el futuro del
-          <br className="hidden md:block" />
+          <br className="lg:hidden block" />
           <span className="bg-gradient-to-r from-[#8b5cf6] via-[#a78bfa] to-[#ec4899] bg-clip-text text-transparent">
             diseño digital
           </span>
@@ -85,9 +85,9 @@ const Showcase = memo(function Showcase() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
-          className="mt-12 w-full flex justify-center"
+          className="mt-6 lg:mt-12 w-full flex justify-center"
         >
-          <Glass type="video" src="/videos/bg-aboutus.mp4" />
+          <Glass type="video" src="/videos/video-reunion.mp4" />
         </motion.div>
       </div>
     </section>
