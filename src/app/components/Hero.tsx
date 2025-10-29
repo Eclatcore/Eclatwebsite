@@ -69,7 +69,7 @@ const Hero = memo(function Hero() {
           transition={{ delay: 0.3, duration: 0.4 }}
           className="mt-8 w-full flex justify-center"
         >
-          <Glass type="video" src="/videos/video-reunion.mp4" />
+          <Glass type="video" src="/videos/hero-video-web.mp4" />
           {/* o con video:
         <GlassBox type="video" src="/media/demo.mp4" poster="/media/poster.jpg" />
         */}

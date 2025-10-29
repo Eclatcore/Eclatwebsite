@@ -10,7 +10,7 @@ export default function AboutUs() {
       {/* Video de fondo */}
       <video
         className="absolute inset-0 h-full w-full object-cover z-0"
-        src="/videos/video-hero.mp4"
+        src="/videos/bg-aboutus.mp4"
         autoPlay
         loop
         muted
@@ -33,19 +33,17 @@ export default function AboutUs() {
             whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
             viewport={{ once: true, amount: 0.6 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="will-change-[opacity,transform,filter] font-heading text-4xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight"
+            className="will-change-[opacity,transform,filter] font-heading text-4xl md:text-6xl lg:text-5xl leading-[1.05] tracking-tight"
           >
             <span className="relative inline-block group">
               <span className="bg-gradient-to-r from-[#8b5cf6] via-[#a78bfa] to-[#a78bfa] bg-clip-text text-transparent drop-shadow-[0_6px_30px_rgba(139,92,246,0.35)]">
-                Diseñamos marcas y productos digitales que brillan y convierten
+                No venimos a competir, venimos a ofrecerte resultados reales: marcas que conectan, webs que convierten y experiencias digitales que perduran
               </span>
             </span>
           </motion.h2>
 
           <p className="mt-6 text-lg md:text-xl text-white/85 w-full lg:w-[90%]">
-            Somos un estudio digital que combina estrategia, diseño y tecnología para impulsar
-            el crecimiento de empresas ambiciosas. Construimos experiencias memorables enfocadas
-            en resultados medibles y crecimiento sostenido.
+            Somos un estudio digital que une estrategia, diseño UX/UI y desarrollo para transformar marcas en experiencias memorables. No construimos webs, construimos resultados: proyectos medibles, sostenibles y con propósito
           </p>
         </div>
       </div>
@@ -97,8 +95,7 @@ export default function AboutUs() {
               <h3 className="font-heading text-2xl md:text-3xl">Ejecución precisa</h3>
             </div>
             <p className="text-white/85">
-              Implementamos sitios rápidos, accesibles y SEO-ready, con branding coherente y
-              experiencias cuidando cada detalle.
+              Definimos objetivos, público y propuesta de valor para que cada decisión de diseño o desarrolloe tnga un propósito: hacer crecer tu negocio.
             </p>
           </div>
         </motion.div>

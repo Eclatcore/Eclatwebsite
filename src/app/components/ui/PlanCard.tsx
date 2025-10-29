@@ -38,7 +38,7 @@ export default function PlanCard({
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay }}
-      className={`group relative overflow-hidden rounded-2xl sm:rounded-3xl p-6 sm:p-8 transition-all duration-500 w-full max-w-md ${isPremium ? 'h-[550px] sm:h-[600px]' : 'h-[450px] sm:h-[500px]'} flex flex-col justify-center ${cardClasses}`}
+      className={`group relative overflow-hidden rounded-2xl sm:rounded-3xl p-6 sm:p-8 transition-all duration-500 w-full max-w-md h-full flex flex-col ${cardClasses}`}
       style={isPremium ? {
         boxShadow: 'inset 0 0 60px rgba(167,139,250,0.1), 0 0 40px rgba(167,139,250,0.4), 0 0 0 2px rgba(167,139,250,0.3), 0 0 20px rgba(167,139,250,0.2)'
       } : {}}
@@ -62,35 +62,44 @@ export default function PlanCard({
         </>
       )}
 
-      <div className="relative z-10">
-        <h3 className={`font-heading text-xl sm:text-2xl mb-4 sm:mb-6 text-left ${titleClasses}`}>
-          {title}
-        </h3>
-        
-        <div className="mb-4 sm:mb-6">
-          <div className={`font-bold mb-1 ${isPremium ? 'text-3xl sm:text-4xl lg:text-5xl' : 'text-2xl sm:text-3xl lg:text-4xl'} text-white`}>
-            {price}
+      <div className="relative z-10 flex flex-col h-full">
+        {/* Header */}
+        <div className="flex-shrink-0">
+          <h3 className={`font-heading text-xl sm:text-2xl mb-4 sm:mb-6 text-left ${titleClasses}`}>
+            {title}
+          </h3>
+          
+          <div className="mb-4 sm:mb-6">
+            <div className={`font-bold mb-1 ${isPremium ? 'text-3xl sm:text-4xl lg:text-5xl' : 'text-2xl sm:text-3xl lg:text-4xl'} text-white`}>
+              {price}
+            </div>
+            <div className="text-xs sm:text-sm text-white/60">{maintenance}</div>
           </div>
-          <div className="text-xs sm:text-sm text-white/60">{maintenance}</div>
         </div>
 
-        <ul className="text-white/80 space-y-2 sm:space-y-3 mb-6 sm:mb-8">
-          {features.map((feature, index) => (
-            <FeatureItem key={index} text={feature} />
-          ))}
-        </ul>
+        {/* Features - contenido principal que se expande */}
+        <div className="flex-1 mb-6 sm:mb-8">
+          <ul className="text-white/80 space-y-2 sm:space-y-3">
+            {features.map((feature, index) => (
+              <FeatureItem key={index} text={feature} />
+            ))}
+          </ul>
+        </div>
 
-        <a href="#contacto" className={buttonClasses}>
-          {isPremium ? (
-            <>
-              <span className="relative z-10">{buttonText}</span>
-              <span className="absolute inset-0 rounded-full bg-gradient-to-r from-[#8b5cf6]/30 via-[#a78bfa]/25 to-[#c084fc]/30 blur-sm opacity-0 group-hover/btn:opacity-60 transition-opacity duration-300" />
-              <span className="absolute -inset-1 rounded-full bg-gradient-to-r from-[#8b5cf6]/20 via-[#a78bfa]/15 to-[#c084fc]/20 blur-lg opacity-40" />
-            </>
-          ) : (
-            buttonText
-          )}
-        </a>
+        {/* Button - siempre en la parte inferior */}
+        <div className="flex-shrink-0">
+          <a href="#contacto" className={buttonClasses}>
+            {isPremium ? (
+              <>
+                <span className="relative z-10">{buttonText}</span>
+                <span className="absolute inset-0 rounded-full bg-gradient-to-r from-[#8b5cf6]/30 via-[#a78bfa]/25 to-[#c084fc]/30 blur-sm opacity-0 group-hover/btn:opacity-60 transition-opacity duration-300" />
+                <span className="absolute -inset-1 rounded-full bg-gradient-to-r from-[#8b5cf6]/20 via-[#a78bfa]/15 to-[#c084fc]/20 blur-lg opacity-40" />
+              </>
+            ) : (
+              buttonText
+            )}
+          </a>
+        </div>
       </div>
 
       {/* Efectos hover para cards normales */}

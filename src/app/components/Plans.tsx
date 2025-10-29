@@ -6,13 +6,15 @@ const plansData = [
     {
         title: "Básico",
         price: "300€",
-        maintenance: "+ 15€/mes por mantenimiento",
+        maintenance: "Todo el sitio web + 15€/mes por mantenimiento (opcional)",
         features: [
-            "Página web de 5 secciones",
-            "Diseño responsivo",
-            "SEO básico",
-            "Formulario de contacto",
-            "Hosting 1 año incluido"
+            "Página web de 4 secciones",
+            "Diseño responsive (adaptado a todos los dispositivos)",
+            "SEO para aparecer en buscadores",
+            "Formulario de contacto profesional",
+            "Hosting 1 año incluido",
+            "Regalo de bienvenida: Análisis gratuito de tu marca y asesoría de color y tipografía",
+            "Informe inicial de rendimiento web"
         ],
         buttonText: "Elegir plan",
         delay: 0
@@ -20,13 +22,15 @@ const plansData = [
     {
         title: "Premium",
         price: "350€",
-        maintenance: "Todo el sitio web + 25€/mes de mantenimiento por 12 meses",
+        maintenance: "Todo el sitio web + 25€/mes de mantenimiento por 12 meses (opcional)",
         features: [
             "Web profesional personalizada",
-            "Cuatro secciones (inicio, servicios, contacto, nosotros)",
-            "Dominio y hosting no incluido",
+            "Diseño responsive (adaptado a todos los dispositivos)",
+            "SEO para aparecer en buscadores",
+            "Hosting 1 año incluido",
             "Mantenimiento por 12 meses",
-            "Cambios"
+            "Regalo: Optimización de velocidad y diseño UX mejorado",
+            "Cambios ilimitados"
         ],
         buttonText: "Quiero empezar ahora",
         isPremium: true,
@@ -104,7 +108,7 @@ export default function Plans() {
                 </motion.div>
 
                 {/* Plans Grid - Responsive */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-6 gap-10 mb-12 sm:mb-16 items-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-6 gap-10 mb-12 sm:mb-16 items-stretch">
                     {plansData.map((plan, index) => (
                         <PlanCard
                             key={plan.title}
@@ -119,56 +123,91 @@ export default function Plans() {
                     ))}
                 </div>
 
-                {/* Banner precio reducido - MUY LLAMATIVO */}
+                {/* Banner elegante - Oferta especial */}
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                    className="group relative overflow-hidden rounded-2xl sm:rounded-3xl border-2 border-[#8b5cf6]/60 bg-gradient-to-br from-[#8b5cf6]/20 via-[#a78bfa]/15 to-[#c084fc]/20 backdrop-blur-2xl p-6 sm:p-8 lg:p-8 transition-all duration-500 hover:bg-gradient-to-br hover:from-[#8b5cf6]/25 hover:via-[#a78bfa]/20 hover:to-[#c084fc]/25 hover:border-[#8b5cf6]/80 hover:scale-[1.02] hover:shadow-[0_0_60px_rgba(139,92,246,0.4)] w-full"
-                    style={{
-                        boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.2), 0 25px 80px -20px rgba(139,92,246,0.3), 0 0 0 1px rgba(139,92,246,0.1), 0 0 40px rgba(139,92,246,0.2)'
-                    }}
+                    className="group relative overflow-hidden rounded-2xl border border-white/20 bg-gradient-to-br from-white/8 via-white/5 to-white/3 backdrop-blur-2xl p-6 sm:p-8 transition-all duration-500 hover:border-white/30 hover:shadow-[0_25px_50px_-12px_rgba(139,92,246,0.3)] w-full max-w-2xl mx-auto"
                 >
-                    {/* Efectos de fondo glass */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/10" />
+                    {/* Efectos de fondo glass sutiles */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/8" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
 
                     {/* Patrón sutil */}
-                    <div className="absolute inset-0 opacity-10">
+                    <div className="absolute inset-0 opacity-5">
                         <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_0%,rgba(255,255,255,0.1)_50%,transparent_100%)] bg-[length:40px_40px]" />
                     </div>
 
-                    {/* Contenido principal */}
+                    {/* Contenido elegante */}
                     <div className="relative z-10 text-center">
-                        {/* Título MUY LLAMATIVO */}
-                        <motion.h3
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: true, amount: 0.3 }}
-                            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
-                            className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-4xl text-white mb-4 sm:mb-6"
+                        {/* Badge sutil */}
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 border border-white/20 mb-4"
                         >
-                            <span className="text-white">
-                                Hasta final de este mes
+                            <span className="text-white/80 font-medium text-sm">Oferta especial</span>
+                        </motion.div>
+
+                        {/* Título elegante */}
+                        <motion.h3
+                            initial={{ opacity: 0, y: 15 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.7, delay: 0.3 }}
+                            className="font-heading text-2xl sm:text-3xl text-white mb-3"
+                        >
+                            <span className="bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+                                Descuento del 40%
                             </span>
                         </motion.h3>
-                        {/* Descripción MUY LLAMATIVA */}
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: true, amount: 0.3 }}
-                            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
-                            className="text-white/90 text-base sm:text-lg md:text-xl lg:text-2xl"
+
+                        {/* Subtítulo */}
+                        <motion.p
+                            initial={{ opacity: 0, y: 15 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.7, delay: 0.4 }}
+                            className="text-white/70 text-sm sm:text-base mb-6"
                         >
-                            <p className="mb-4 sm:mb-6 px-2">
-                                Haz brillar más tu negocio con un 40% de descuento.
+                            Válido hasta final de mes
+                        </motion.p>
+
+                        {/* Descripción elegante */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 15 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.7, delay: 0.5 }}
+                            className="text-white/60 text-sm mb-6"
+                        >
+                            <p>
+                                Aprovecha esta oportunidad para impulsar tu presencia digital
                             </p>
                         </motion.div>
+
+                        {/* Botón elegante */}
+                        <motion.a
+                            href="#contacto"
+                            initial={{ opacity: 0, y: 15 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.7, delay: 0.6 }}
+                            className="group/btn relative inline-flex items-center justify-center rounded-full px-6 py-3 font-medium text-white border border-white/30 bg-white/10 backdrop-blur-xl transition-all duration-300 hover:border-white/50 hover:bg-white/15 hover:scale-[1.02] active:scale-[0.98] text-sm"
+                            whileHover={{ y: -1 }}
+                            whileTap={{ scale: 0.98 }}
+                        >
+                            <span className="relative z-10">Aprovechar oferta</span>
+                            <span className="pointer-events-none absolute inset-0 rounded-full bg-white/5 opacity-0 transition-opacity duration-300 group-hover/btn:opacity-100" />
+                        </motion.a>
                     </div>
 
-                    {/* Efectos de borde glass */}
-                    <div className="absolute inset-0 rounded-3xl border border-white/10 bg-gradient-to-r from-white/5 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    {/* Efectos de borde glass sutiles */}
+                    <div className="absolute inset-0 rounded-2xl border border-white/10 bg-gradient-to-r from-white/5 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </motion.div>
             </div>
         </section>
