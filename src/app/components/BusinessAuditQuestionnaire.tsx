@@ -213,7 +213,7 @@ const BusinessAuditQuestionnaire = memo(function BusinessAuditQuestionnaire() {
             Auditoría UX Gratuita
           </h2>
 
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
+          <p className="text-lg lg:text-xl text-white/80 max-w-2xl mx-auto">
             Trazamos un plan para mejorar tu presencia digital y aumentar tus conversiones. <span className="font-semibold">Análisis completo por tiempo limitado.</span>
           </p>
         </motion.div>

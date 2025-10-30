@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import PlanCard from "./ui/PlanCard";
 
 const plansData = [
@@ -63,6 +64,14 @@ const plansData = [
 ];
 
 export default function Plans() {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const update = () => setIsMobile(window.innerWidth < 768);
+        update();
+        window.addEventListener("resize", update);
+        return () => window.removeEventListener("resize", update);
+    }, []);
     return (
         <section id="planes" className="relative min-h-[100vh] w-full overflow-hidden">
             {/* Background con continuidad desde Services */}
@@ -98,7 +107,7 @@ export default function Plans() {
                             Nuestros planes
                         </span>
                     </h2>
-                    <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8 lg:mb-16 px-4">
+                    <p className="ltext-lg g:text-xl text-white/80 max-w-3xl mx-auto mb-8 lg:mb-16 px-4">
                         Soluciones web completas para impulsar tu negocio digital
                     </p>
 
@@ -123,7 +132,7 @@ export default function Plans() {
 
                 {/* Banner elegante - Oferta especial */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -165,7 +174,7 @@ export default function Plans() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.7, delay: 0.4 }}
-                            className="text-white/70 text-lg mb-6 max-w-4xl mx-auto"
+                            className="text-white/70 text-base lg:text-lg mb-6 max-w-4xl mx-auto"
                         >
                             Solo hasta final de mes. Es el momento perfecto para impulsar tu presencia digital con una web estratégica, moderna y lista para crecer.
                         </motion.p>

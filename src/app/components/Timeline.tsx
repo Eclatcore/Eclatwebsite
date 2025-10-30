@@ -85,7 +85,7 @@ const Timeline = memo(function Timeline() {
               Un proceso orientado a resultados
             </span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-6 sm:mb-8 px-4">
+          <p className="text-lg lg:text-xl text-white/80 max-w-3xl mx-auto mb-6 sm:mb-8 px-4">
             Cada etapa del trabajo se basa en investigación, diseño iterativo y validación constante.
             El resultado: productos digitales que cumplen sus objetivos.
           </p>
@@ -131,7 +131,7 @@ const Timeline = memo(function Timeline() {
                         {step.description}
                       </p>
 
-                      <p className="text-lg text-white/70 leading-relaxed">
+                      <p className="lg:block hidden text-lg text-white/70 leading-relaxed">
                         {step.details}
                       </p>
                     </div>

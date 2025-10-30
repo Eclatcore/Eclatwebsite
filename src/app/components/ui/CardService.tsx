@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 interface CardServiceProps {
   title: string;
@@ -18,9 +19,18 @@ export default function CardService({
   icon,
   delay = 0
 }: CardServiceProps) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const update = () => setIsMobile(window.innerWidth < 768);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
   return (
     <motion.div
-      initial={{ opacity: 0 }}
+      initial={isMobile ? { opacity: 1 } : { opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay }}
@@ -49,8 +59,7 @@ export default function CardService({
               className="mb-6 text-[#a78bfa] drop-shadow-lg transition-transform duration-300 md:group-hover:scale-110 md:group-hover:rotate-3"
             >
               {icon}
-            </div>
-          )}
+            </div>    )}
 
           {/* Title with enhanced typography */}
           <h3 className="font-heading text-3xl text-white mb-4 drop-shadow-sm group-hover:text-[#a78bfa] transition-colors duration-300">

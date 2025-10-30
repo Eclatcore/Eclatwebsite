@@ -37,13 +37,13 @@ export default function Services() {
               Nuestros tres pilares
             </span>
           </h2>
-          <p className="text-xl text-white/80 max-w-3xl mx-auto">
+          <p className="text-lg lg:text-xl text-white/80 max-w-3xl mx-auto">
             Éclat nace de la unión entre el diseño de experiencia, la ingeniería web y la psicología del usuario.
           </p>
         </motion.div>
 
         {/* Services Grid */}
-        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3 items-stretch">
+        <div className="mt-10 lg:mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3 items-stretch">
           <CardService
             title="Diseño web basado en evidencia"
             description="Análisis exhaustivo de tus potenciales clientes. Diseñamos tu web con estrategias probadas para generar resultados."

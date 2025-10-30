@@ -42,7 +42,7 @@ export default function AboutUs() {
             </span>
           </motion.h2>
 
-          <p className="mt-6 text-xl text-white/85 w-full lg:w-[90%]">
+          <p className="mt-6 text-lg lg:text-xl text-white/85 w-full lg:w-[90%]">
             En Éclat combinamos estrategia, diseño y tecnología, no hacemos “una web más”. Creamos experiencias digitales capaces de generar impacto.
           </p>
         </div>

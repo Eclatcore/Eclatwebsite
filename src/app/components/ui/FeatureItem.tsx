@@ -13,7 +13,7 @@ export default function FeatureItem({ text }: FeatureItemProps) {
         </div>
       </div>
       <div className="flex-1">
-        <p className="text-lg leading-relaxed">{text}</p>
+        <p className="text-base lg:text-lg leading-relaxed">{text}</p>
       </div>
     </li>
   );

@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { memo } from "react";
+import { memo, useEffect, useState } from "react";
 
 const reasons = [
   {
@@ -53,6 +53,14 @@ const reasons = [
 ];
 
 const WhyChooseUs = memo(function WhyChooseUs() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const update = () => setIsMobile(window.innerWidth < 768);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
   return (
     <section id="por-que-elegirnos" className="relative min-h-[100vh] w-full overflow-hidden py-10 sm:py-20 lg:py-24">
       {/* Background original y único */}
@@ -90,7 +98,7 @@ const WhyChooseUs = memo(function WhyChooseUs() {
               ¿Qué nos hace diferentes?
             </span>
           </h2>
-          <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-6 sm:mb-8 px-4">
+          <p className="text-lg lg:text-xl text-white/80 max-w-3xl mx-auto mb-6 sm:mb-8 px-4">
             Queremos dejar huella y sentimos pasión por lo que hacemos. Nuestro objetivo no es hacer web, sino construir experiencias digitales que impacten positivamente y que hagan crecer tu negocio.
           </p>
         </motion.div>
@@ -100,7 +108,7 @@ const WhyChooseUs = memo(function WhyChooseUs() {
           {reasons.map((reason, index) => (
             <motion.div
               key={reason.id}
-              initial={{ opacity: 0 }}
+              initial={isMobile ? { opacity: 1 } : { opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: index * 0.1 }}
@@ -142,7 +150,7 @@ const WhyChooseUs = memo(function WhyChooseUs() {
                 </h3>
 
                 {/* Descripción */}
-                <p className="text-xl text-white/90 mb-3 sm:mb-4 font-medium group-hover:text-white transition-colors duration-300">
+                <p className="text-xl text-white/90 mb-3 sm:mb-4 font-medium group-hover:text-white transition-colors duration-300 lg:block hidden">
                   {reason.description}
                 </p>
 

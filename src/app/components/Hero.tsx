@@ -35,7 +35,7 @@ const Hero = memo(function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.1, duration: 0.4 }}
-          className="mt-6 mb-8 max-w-2xl font-body text-xl text-white/80 mx-auto"
+          className="mt-6 mb-8 max-w-2xl font-body text-lg lg:text-xl text-white/80 mx-auto"
         >
           En Éclat combinamos diseño UX/UI, desarrollo web y visión de negocio para crear experiencias digitales que conectan, convierten y generan resultados reales.
         </motion.p>

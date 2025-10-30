@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import FeatureItem from "./FeatureItem";
 
 interface PlanCardProps {
@@ -22,6 +23,14 @@ export default function PlanCard({
   isPremium = false, 
   delay = 0 
 }: PlanCardProps) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const update = () => setIsMobile(window.innerWidth < 768);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
   const cardClasses = isPremium 
     ? "border-2 border-[#a78bfa] bg-gradient-to-br from-[#0a0a0a]/95 via-[#1a0b2e]/90 to-[#2d1b69]/85 backdrop-blur-2xl hover:border-[#c084fc] hover:shadow-[0_0_60px_rgba(167,139,250,0.6)]"
     : "border border-white/15 bg-white/5 backdrop-blur-xl hover:bg-white/8 hover:border-white/25";
@@ -36,7 +45,7 @@ export default function PlanCard({
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
+      initial={isMobile ? { opacity: 1 } : { opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay }}

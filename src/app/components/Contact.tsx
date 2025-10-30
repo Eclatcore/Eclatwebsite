@@ -91,7 +91,7 @@ const Contact = memo(function Contact() {
                                 Contacta con nosotros
                             </span>
                         </h2>
-                        <p className="text-lg md:text-xl text-gray-300 leading-relaxed text-start">
+                        <p className="tex-base lg:text-lg md:text-xl text-gray-300 leading-relaxed text-start">
                             ¿Listo para transformar tu negocio? Cuéntanos sobre tu proyecto y te ayudaremos a crear algo extraordinario.
                         </p>
                     </div>
