@@ -13,6 +13,7 @@ const Contact = memo(function Contact() {
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+    const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value, type } = e.target;
@@ -26,6 +27,7 @@ const Contact = memo(function Contact() {
         e.preventDefault();
         setIsSubmitting(true);
         setSubmitStatus('idle');
+        setErrorMessage(null);
 
         try {
             const response = await fetch('/api/contact', {
@@ -33,7 +35,7 @@ const Contact = memo(function Contact() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({ ...formData, sentAt: new Date().toISOString() }),
             });
 
             if (response.ok) {
@@ -48,10 +50,17 @@ const Contact = memo(function Contact() {
                 });
             } else {
                 setSubmitStatus('error');
+                try {
+                    const data = await response.json();
+                    setErrorMessage(data?.message || 'Error desconocido al enviar.');
+                } catch {
+                    setErrorMessage('No se pudo procesar la respuesta del servidor.');
+                }
             }
         } catch (error) {
             console.error('Error sending email:', error);
             setSubmitStatus('error');
+            setErrorMessage('No se pudo conectar con el servidor.');
         } finally {
             setIsSubmitting(false);
         }
@@ -230,7 +239,7 @@ const Contact = memo(function Contact() {
 
                                     {submitStatus === 'error' && (
                                         <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
-                                            Error al enviar el mensaje. Por favor, inténtalo de nuevo.
+                                            Error al enviar el mensaje. {errorMessage ? `Detalles: ${errorMessage}` : 'Por favor, inténtalo de nuevo.'}
                                         </div>
                                     )}
 

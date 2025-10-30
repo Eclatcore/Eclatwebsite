@@ -1,15 +1,12 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT || 465),
-  secure: String(process.env.SMTP_SECURE).toLowerCase() === "true", // 465=true, 587=false
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-});
+// Ensure this route runs on the Node.js runtime (required for nodemailer)
+export const runtime = "nodejs";
+// Ensure dynamic execution (avoid static optimization issues)
+export const dynamic = "force-dynamic";
+
+// Transporter will be created only when SMTP env vars are present
 
 export async function POST(req: Request) {
   try {
@@ -43,11 +40,49 @@ export async function POST(req: Request) {
     }
 
     // Verificar si las variables de entorno están configuradas
-    if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+    const missingEnv = [
+      "SMTP_HOST",
+      "SMTP_PORT",
+      "SMTP_SECURE",
+      "SMTP_USER",
+      "SMTP_PASS",
+      "MAIL_FROM",
+      "MAIL_TO",
+    ].filter((key) => !process.env[key as keyof NodeJS.ProcessEnv]);
+
+    if (missingEnv.length > 0) {
       console.log('⚠️  Variables de entorno no configuradas - Solo guardando en consola');
-      return NextResponse.json({ 
-        message: 'Mensaje recibido correctamente. Para envío de emails, configurar variables de entorno en Vercel.' 
-      });
+      const body = {
+        message: 'Faltan variables de entorno para enviar email',
+        missing: missingEnv,
+      } as const;
+      // En desarrollo, respondemos 200 para poder probar el flujo sin SMTP
+      if (!process.env.VERCEL) {
+        return NextResponse.json(body);
+      }
+      // En producción, devolver 500 para que el cliente muestre error
+      return NextResponse.json(body, { status: 500 });
+    }
+
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT || 465),
+      secure: String(process.env.SMTP_SECURE).toLowerCase() === "true", // 465=true, 587=false
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    });
+
+    // Verificar conexión SMTP para dar errores claros en Vercel
+    try {
+      await transporter.verify();
+    } catch (verifyErr: any) {
+      console.error('❌ Error verificando SMTP:', verifyErr);
+      return NextResponse.json({
+        message: 'No se pudo conectar al servidor SMTP. Revisa host/puerto/secure/credenciales.',
+        error: verifyErr?.message ?? 'smtp_verify_failed',
+      }, { status: 500 });
     }
 
     const html = `
@@ -70,21 +105,26 @@ export async function POST(req: Request) {
       </div>
     `;
 
+    const fromAddress = process.env.MAIL_FROM || process.env.SMTP_USER as string;
+    const toAddress = process.env.MAIL_TO || process.env.SMTP_USER as string;
+    const ccAddress = process.env.MAIL_CC;
+
     await transporter.sendMail({
-      from: process.env.MAIL_FROM,
-      to: process.env.MAIL_TO,
-      cc: 'eclatcore2025@gmail.com', // Copia a Gmail
+      from: fromAddress,
+      to: toAddress,
+      cc: ccAddress || undefined,
       subject: `Nuevo contacto: ${name ?? "Sin nombre"}`,
       replyTo: email,
       html,
     });
 
-    console.log('✅ Email enviado correctamente a eclat@eclatcore.com y eclatcore2025@gmail.com');
-    return NextResponse.json({ message: 'Email enviado correctamente a eclat@eclatcore.com y eclatcore2025@gmail.com' });
+    console.log('✅ Email enviado correctamente');
+    return NextResponse.json({ message: 'Email enviado correctamente' });
   } catch (err: any) {
     console.error("❌ Error enviando email:", err);
     return NextResponse.json({ 
-      message: 'Mensaje recibido pero error al enviar email. Contactar manualmente a eclat@eclatcore.com' 
-    });
+      message: 'Mensaje recibido pero error al enviar email. Contactar manualmente a eclat@eclatcore.com',
+      error: err?.message ?? 'unknown'
+    }, { status: 500 });
   }
 }
