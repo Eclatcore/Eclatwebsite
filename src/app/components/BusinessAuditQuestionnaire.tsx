@@ -174,21 +174,21 @@ const BusinessAuditQuestionnaire = memo(function BusinessAuditQuestionnaire() {
   };
 
   const currentStepData = steps[currentStep];
-  
+
   // Validación específica para email
   const isValidEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
-  
-  const isCurrentStepValid = currentStepData.type === "email" 
+
+  const isCurrentStepValid = currentStepData.type === "email"
     ? formData[currentStepData.field]?.trim() !== "" && isValidEmail(formData[currentStepData.field])
     : currentStepData.field === "instagramHandle"
-    ? true // Instagram es opcional
-    : formData[currentStepData.field]?.trim() !== "";
+      ? true // Instagram es opcional
+      : formData[currentStepData.field]?.trim() !== "";
 
   return (
-    <section className="relative py-20 px-4 overflow-hidden">
+    <section className="relative py-10 lg:py-20 px-6 overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-[#8b5cf6]/20 to-[#ec4899]/25" />
@@ -208,13 +208,13 @@ const BusinessAuditQuestionnaire = memo(function BusinessAuditQuestionnaire() {
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#8b5cf6]/20 to-[#ec4899]/20 border border-white/20 backdrop-blur-sm mb-6">
             <span className="text-sm font-medium text-white/90">Oferta limitada</span>
           </div>
-          
+
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-white mb-4 leading-tight">
             Auditoría UX Gratuita
           </h2>
-          
-          <p className="text-lg text-white/80 max-w-2xl mx-auto">
-            Descubre cómo optimizar tu presencia digital y aumentar tus conversiones. <span className="font-semibold">Análisis completo por tiempo limitado.</span>
+
+          <p className="text-xl text-white/80 max-w-2xl mx-auto">
+            Trazamos un plan para mejorar tu presencia digital y aumentar tus conversiones. <span className="font-semibold">Análisis completo por tiempo limitado.</span>
           </p>
         </motion.div>
 
@@ -279,11 +279,10 @@ const BusinessAuditQuestionnaire = memo(function BusinessAuditQuestionnaire() {
                         onChange={(e) => handleInputChange(currentStepData.field, e.target.value)}
                         className="sr-only"
                       />
-                      <div className={`w-4 h-4 rounded-full border-2 mr-3 transition-all duration-200 ${
-                        formData[currentStepData.field] === option.value
+                      <div className={`w-4 h-4 rounded-full border-2 mr-3 transition-all duration-200 ${formData[currentStepData.field] === option.value
                           ? "border-primary bg-primary"
                           : "border-white/30 group-hover:border-white/50"
-                      }`}>
+                        }`}>
                         {formData[currentStepData.field] === option.value && (
                           <div className="w-2 h-2 bg-white rounded-full m-0.5" />
                         )}
@@ -313,7 +312,7 @@ const BusinessAuditQuestionnaire = memo(function BusinessAuditQuestionnaire() {
                           Tu auditoría será evaluada por un profesional UX/UI
                         </p>
                         <p className="text-white/70 text-sm">
-                          Recibirás un análisis detallado y personalizado en las próximas 24 horas. 
+                          Recibirás un análisis detallado y personalizado en las próximas 24 horas.
                           <span className="text-primary font-medium">¡Nos alegramos de que participes!</span>
                         </p>
                       </div>
@@ -394,7 +393,7 @@ const BusinessAuditQuestionnaire = memo(function BusinessAuditQuestionnaire() {
         >
           {/* Backdrop */}
           <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
-          
+
           {/* Modal */}
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
@@ -425,7 +424,7 @@ const BusinessAuditQuestionnaire = memo(function BusinessAuditQuestionnaire() {
 
                 {/* Mensaje */}
                 <p className="text-white/80 mb-6 leading-relaxed">
-                  Tu auditoría será evaluada por un profesional UX/UI considerando tu personalidad de marca, objetivos y visión del sitio web. 
+                  Tu auditoría será evaluada por un profesional UX/UI considerando tu personalidad de marca, objetivos y visión del sitio web.
                   <span className="text-primary font-semibold">Te enviaremos un análisis detallado y personalizado en las próximas 24 horas.</span>
                 </p>
 

@@ -55,7 +55,7 @@ const testimonials = [
 
 const Testimonials = memo(function Testimonials() {
   return (
-    <section id="testimonios" className="relative py-20 px-4 overflow-hidden">
+    <section id="testimonios" className="relative py-10 lg:py-20 px-6 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-br from-black via-[#1a0b2e]/90 to-[#2d1b69]/80" />
@@ -80,7 +80,7 @@ const Testimonials = memo(function Testimonials() {
           className="text-center mb-16"
         >
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#8b5cf6]/20 to-[#ec4899]/20 border border-white/20 backdrop-blur-sm mb-6">
-            <span className="text-sm font-medium text-white/90">✨ CASOS DE ÉXITO</span>
+            <span className="text-sm font-medium text-white/90">Casos de éxito</span>
           </div>
           
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-white mb-6">
@@ -89,9 +89,9 @@ const Testimonials = memo(function Testimonials() {
             </span>
           </h2>
           
-          <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto">
+          <p className="text-xl text-white/80 max-w-3xl mx-auto">
             Nuestros clientes han experimentado transformaciones increíbles en sus negocios. 
-            <span className="text-primary font-semibold">Sus resultados son nuestra mejor carta de presentación.</span>
+            <span className="font-semibold"> Sus resultados son nuestra mejor carta de presentación.</span>
           </p>
         </motion.div>
 
@@ -150,8 +150,8 @@ const Testimonials = memo(function Testimonials() {
                             {testimonial.name}
                           </span>
                         </h3>
-                        <p className="text-white/80 text-sm font-medium">{testimonial.company}</p>
-                        <p className="text-white/60 text-xs">{testimonial.role}</p>
+                        <p className="text-white/80 text-lg font-medium">{testimonial.company}</p>
+                        <p className="text-white/60 text-base">{testimonial.role}</p>
                       </div>
                     </div>
 
@@ -176,32 +176,6 @@ const Testimonials = memo(function Testimonials() {
                       "{testimonial.testimonial}"
                     </blockquote>
                   </div>
-
-                  {/* Resultados - siempre en la parte inferior */}
-                  <div className="space-y-3 mt-auto">
-                    <h4 className="text-white/80 font-semibold text-sm uppercase tracking-wide">
-                      Resultados obtenidos:
-                    </h4>
-                    <div className="grid grid-cols-3 gap-3">
-                      {testimonial.results.map((result, i) => (
-                        <motion.div
-                          key={i}
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          whileInView={{ opacity: 1, scale: 1 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: index * 0.1 + i * 0.1 }}
-                          className="text-center p-3 rounded-xl bg-white/5 border border-white/10"
-                        >
-                          <div className={`text-lg font-bold bg-gradient-to-r ${testimonial.color} bg-clip-text text-transparent`}>
-                            {result.metric}
-                          </div>
-                          <div className="text-xs text-white/70 mt-1">
-                            {result.label}
-                          </div>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </div>
                 </div>
 
                 {/* Efecto de aura alrededor de la card */}
@@ -217,7 +191,7 @@ const Testimonials = memo(function Testimonials() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
-          className="text-center mt-16"
+          className="text-center mt-10"
         >
           <div className="mb-6">
             <p className="text-white/80 text-lg mb-4">

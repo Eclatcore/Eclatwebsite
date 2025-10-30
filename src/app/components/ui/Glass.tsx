@@ -12,7 +12,7 @@ const GlassMedia = memo(function GlassMedia(props: Props) {
   return (
     <section className="">
     {/* CONTENIDO */}
-    <div className="relative z-10 mx-auto px-4 text-center">
+    <div className="relative z-10 mx-auto px-0lg:px-4 text-center">
       <div className="space-y-6">
         {/* Contenedor estilo liquid glass alineado al header */}
         <motion.div

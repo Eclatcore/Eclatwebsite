@@ -59,43 +59,43 @@ const Contact = memo(function Contact() {
 
     return (
         <section id="contacto" className="relative min-h-[100vh] w-full overflow-hidden py-10 lg:py-20">
-             {/* Background igual a Services */}
-             <div className="absolute inset-0 -z-10">
-                 {/* Gradiente horizontal (180 grados) */}
-                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#1a0b2e] to-[#8b5cf6]/30" />
-                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#ec4899]/35" />
-                
+            {/* Background igual a Services */}
+            <div className="absolute inset-0 -z-10">
+                {/* Gradiente horizontal (180 grados) */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#1a0b2e] to-[#8b5cf6]/30" />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#ec4899]/35" />
+
                 {/* Glows animados */}
                 <div className="pointer-events-none absolute -top-40 -left-40 h-80 w-80 rounded-full bg-gradient-to-br from-[#8b5cf6]/40 to-[#a78bfa]/20 blur-3xl animate-pulse" />
                 <div className="pointer-events-none absolute -bottom-40 -right-40 h-80 w-80 rounded-full bg-gradient-to-br from-[#ec4899]/35 to-[#f472b6]/20 blur-3xl animate-pulse" />
                 <div className="pointer-events-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-60 w-60 rounded-full bg-gradient-to-br from-[#a78bfa]/20 to-[#ec4899]/15 blur-2xl animate-pulse" />
-                
+
                 {/* Patrón de puntos sutil */}
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(139,92,246,0.1)_1px,transparent_1px),radial-gradient(circle_at_75%_75%,rgba(236,72,153,0.1)_1px,transparent_1px)] bg-[size:60px_60px] opacity-30" />
-                
+
                 {/* Viñeta para enfoque */}
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_30%,rgba(0,0,0,0.3)_100%)]" />
-             </div>
+            </div>
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-4 max-w-7xl">
+            <div className="container mx-auto px-6 lg:px-4 max-w-7xl">
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.4 }}
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    className="text-center mb-8 lg:mb-16"
                 >
                     <div className="max-w-3xl">
-                    <h2 className="font-heading text-4xl md:text-6xl text-start lg:text-7xl leading-tight tracking-tight text-white mb-6">
-                        <span className="bg-gradient-to-r from-[#8b5cf6] via-[#a78bfa] to-[#a78bfa] bg-clip-text text-transparent">
-                            Contacta con nosotros
-                        </span>
-                    </h2>
-                    <p className="text-lg md:text-xl text-gray-300 leading-relaxed text-start">
-                        ¿Listo para transformar tu negocio? Cuéntanos sobre tu proyecto y te ayudaremos a crear algo extraordinario.
-                    </p>
+                        <h2 className="font-heading text-4xl md:text-6xl text-start lg:text-7xl leading-tight tracking-tight text-white mb-6">
+                            <span className="bg-gradient-to-r from-[#8b5cf6] via-[#a78bfa] to-[#a78bfa] bg-clip-text text-transparent">
+                                Contacta con nosotros
+                            </span>
+                        </h2>
+                        <p className="text-lg md:text-xl text-gray-300 leading-relaxed text-start">
+                            ¿Listo para transformar tu negocio? Cuéntanos sobre tu proyecto y te ayudaremos a crear algo extraordinario.
+                        </p>
                     </div>
-                  
+
 
                 </motion.div>
 
@@ -210,9 +210,9 @@ const Contact = memo(function Contact() {
                                         />
                                         <label htmlFor="privacyAccepted" className="text-sm text-gray-300">
                                             Acepto la{" "}
-                                            <a 
-                                                href="/legal/politica-de-privacidad" 
-                                                target="_blank" 
+                                            <a
+                                                href="/legal/politica-de-privacidad"
+                                                target="_blank"
                                                 rel="noopener noreferrer"
                                             >
                                                 Política de Privacidad
@@ -227,7 +227,7 @@ const Contact = memo(function Contact() {
                                             ¡Mensaje enviado correctamente! Te contactaremos pronto.
                                         </div>
                                     )}
-                                    
+
                                     {submitStatus === 'error' && (
                                         <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
                                             Error al enviar el mensaje. Por favor, inténtalo de nuevo.
@@ -275,8 +275,8 @@ const Contact = memo(function Contact() {
                                             </svg>
                                         </div>
                                         <div>
-                                            <p className="text-white font-medium">Email</p>
-                                            <p className="text-gray-300">eclat@eclatcore.com</p>
+                                            <p className="text-white text-lg font-medium">Email</p>
+                                            <p className="text-gray-300 text-lg ">eclat@eclatcore.com</p>
                                         </div>
                                     </div>
 
@@ -287,8 +287,8 @@ const Contact = memo(function Contact() {
                                             </svg>
                                         </div>
                                         <div>
-                                            <p className="text-white font-medium">Teléfono</p>
-                                            <p className="text-gray-300">+34 613 80 97 06</p>
+                                            <p className="text-white font-medium text-lg ">Teléfono</p>
+                                            <p className="text-gray-300 text-lg ">+34 613 80 97 06</p>
                                         </div>
                                     </div>
 
@@ -300,8 +300,8 @@ const Contact = memo(function Contact() {
                                             </svg>
                                         </div>
                                         <div>
-                                            <p className="text-white font-medium">Ubicación</p>
-                                            <p className="text-gray-300">Madrid, España</p>
+                                            <p className="text-white font-medium text-lg ">Ubicación</p>
+                                            <p className="text-gray-300 text-lg ">Valencia, España</p>
                                         </div>
                                     </div>
                                 </div>
@@ -323,10 +323,10 @@ const Contact = memo(function Contact() {
                                 >
                                     {/* Animated background gradient */}
                                     <div className="absolute inset-0 bg-gradient-to-r from-[#8b5cf6]/30 via-[#a78bfa]/20 to-[#ec4899]/30 opacity-0 transition-opacity duration-500 group-hover/btn:opacity-100" />
-                                    
+
                                     {/* Shimmer effect */}
                                     <div className="absolute -left-10 top-0 h-full w-10 translate-x-0 skew-x-[-20deg] bg-white/30 blur-sm opacity-0 transition-all duration-700 ease-out group-hover/btn:translate-x-[200%] group-hover/btn:opacity-100" />
-                                    
+
                                     {/* Content */}
                                     <div className="relative z-10 flex items-center space-x-3">
                                         <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#8b5cf6]/30 to-[#a78bfa]/20 backdrop-blur-sm border border-white/30 flex items-center justify-center shadow-lg shrink-0">
@@ -334,11 +334,13 @@ const Contact = memo(function Contact() {
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                             </svg>
                                         </div>
-                                        <span className="text-white/90 group-hover/btn:text-white font-medium transition-colors duration-300">
-                                            Agenda una reunión
-                                        </span>
+                                        <a href="https://calendly.com/eclat-eclatcore/30min" target="_blank" rel="noopener noreferrer">
+                                            <span className="text-white/90 group-hover/btn:text-white font-medium transition-colors duration-300">
+                                                Agenda una reunión
+                                            </span>
+                                        </a>
                                     </div>
-                                    
+
                                     {/* Outer glow on hover */}
                                     <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-[#8b5cf6]/20 to-[#ec4899]/20 opacity-0 blur-md transition-opacity duration-500 group-hover/btn:opacity-100" />
                                 </motion.button>

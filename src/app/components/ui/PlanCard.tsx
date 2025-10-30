@@ -4,6 +4,7 @@ import FeatureItem from "./FeatureItem";
 interface PlanCardProps {
   title: string;
   price: string;
+  oldPrice?: string;
   maintenance: string;
   features: string[];
   buttonText: string;
@@ -14,6 +15,7 @@ interface PlanCardProps {
 export default function PlanCard({ 
   title, 
   price, 
+  oldPrice,
   maintenance, 
   features, 
   buttonText, 
@@ -29,8 +31,8 @@ export default function PlanCard({
     : "text-white";
 
   const buttonClasses = isPremium
-    ? "group/btn relative w-full inline-flex items-center justify-center px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-white font-medium border border-[#a78bfa]/50 bg-gradient-to-r from-[#8b5cf6]/20 via-[#a78bfa]/15 to-[#c084fc]/20 backdrop-blur-2xl shadow-[0_8px_32px_rgba(167,139,250,0.4)] transition-all duration-300 hover:border-[#a78bfa]/70 hover:shadow-[0_12px_40px_rgba(167,139,250,0.5)] hover:from-[#8b5cf6]/30 hover:via-[#a78bfa]/25 hover:to-[#c084fc]/30 text-sm sm:text-base"
-    : "w-full inline-flex items-center justify-center px-4 sm:px-6 py-2.5 sm:py-3 rounded-full border border-white/20 text-white/90 hover:text-white hover:border-white/40 transition-all duration-300 text-sm sm:text-base";
+    ? "group/btn relative w-full inline-flex items-center justify-center px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-white font-medium border border-[#a78bfa]/50 bg-gradient-to-r from-[#8b5cf6]/20 via-[#a78bfa]/15 to-[#c084fc]/20 backdrop-blur-2xl shadow-[0_8px_32px_rgba(167,139,250,0.4)] transition-all duration-300 hover:border-[#a78bfa]/70 hover:shadow-[0_12px_40px_rgba(167,139,250,0.5)] hover:from-[#8b5cf6]/30 hover:via-[#a78bfa]/25 hover:to-[#c084fc]/30 text-base"
+    : "w-full inline-flex items-center justify-center px-4 sm:px-6 py-2.5 sm:py-3 rounded-full border border-white/20 text-white/90 hover:text-white hover:border-white/40 transition-all duration-300 text-base";
 
   return (
     <motion.div
@@ -69,11 +71,18 @@ export default function PlanCard({
             {title}
           </h3>
           
-          <div className="mb-4 sm:mb-6">
-            <div className={`font-bold mb-1 ${isPremium ? 'text-3xl sm:text-4xl lg:text-5xl' : 'text-2xl sm:text-3xl lg:text-4xl'} text-white`}>
+        <div className="mb-4 sm:mb-6">
+          <div className="flex items-baseline gap-3">
+            <div className={`font-bold ${isPremium ? 'text-5xl' : 'text-4xl'} text-white`}>
               {price}
             </div>
-            <div className="text-xs sm:text-sm text-white/60">{maintenance}</div>
+            {oldPrice && (
+              <div className="text-white/40 line-through tracking-wide">
+                {oldPrice}
+              </div>
+            )}
+          </div>
+            <div className=" text-white/60 mt-2 mb-6">{maintenance}</div>
           </div>
         </div>
 

@@ -45,13 +45,11 @@ export default function CardService({
         <div className="flex-1">
           {/* Icon with enhanced styling */}
           {icon && (
-            <motion.div
-              className="mb-6 text-[#a78bfa] drop-shadow-lg"
-              whileHover={{ scale: 1.1, rotate: 5 }}
-              transition={{ duration: 0.3 }}
+            <div
+              className="mb-6 text-[#a78bfa] drop-shadow-lg transition-transform duration-300 md:group-hover:scale-110 md:group-hover:rotate-3"
             >
               {icon}
-            </motion.div>
+            </div>
           )}
 
           {/* Title with enhanced typography */}
@@ -60,7 +58,7 @@ export default function CardService({
           </h3>
 
           {/* Description with better spacing */}
-          <p className="text-white/85 leading-relaxed text-sm md:text-base">
+          <p className="text-white/85 leading-relaxed text-lg">
             {description}
           </p>
         </div>

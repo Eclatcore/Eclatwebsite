@@ -5,9 +5,9 @@ import { memo } from "react";
 const reasons = [
   {
     id: 1,
-    title: "Te damos análisis y métricas",
-    description: "Diseñamos con propósito",
-    details: "Diseñamos con propósito para generar impacto positivo, valor y resultados medibles. Lo acompañamos de análisis y métricas que podras obtener durante el proceso",
+    title: "Análisis y métricas incluidos",
+    description: "Decisiones basadas en datos reales",
+    details: "Desde el primer día analizamos tu marca y tus usuarios para definir una estrategia ganadora. Obtendrás reportes con métricas claras durante todo el proceso.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
@@ -16,9 +16,9 @@ const reasons = [
   },
   {
     id: 2,
-    title: "Diseño Personalizado",
-    description: "Cada detalle importa",
-    details: "No usamos plantillas. Somos fieles al diseño UX/UI por eso diseñamos sitios alineados con la identidad de tu marca y a las tendencias del diseño web moderno.",
+    title: "Diseño 100% personalizado",
+    description: "No usamos plantillas, diseñamos experiencias",
+    details: "Cada web refleja la esencia de tu marca y sigue las tendencias más actuales con enfoque en el diseño UX/UI, creamos experiencia únicas.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
@@ -27,15 +27,29 @@ const reasons = [
   },
   {
     id: 3,
-    title: "Soporte continuo",
-    description: "Las últimas tecnologías web",
-    details: "Creamos webs rápidas, seguras y fáciles de gestionar. Entregamos manuales claros para que puedas entender tu sitio web y quedamos a tu disposicion para brindarte soporte cuando lo necesites",
+    title: "Soporte y acompañamiento continuo",
+    description: "No te dejamos solo después del lanzamiento",
+    details: "Siempre tendrás asistencia y guía. Incluimos un manual para que puedas gestionar tu web y soporte continuo cuando lo necesites.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     )
   },
+  {
+    id: 4,
+    title: "Actualizaciones por temporada",
+    description: "Tu web evoluciona contigo",
+    details: "En el plan Premium puedes adaptar el diseño de tu web a cada temporada o evento: Navidad, verano, Halloween o cualquier fecha especial para tu marca.",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10m-9 4h5m6-9H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V7a2 2 0 00-2-2z" />
+      </svg>
+
+
+    )
+  }
+
 ];
 
 const WhyChooseUs = memo(function WhyChooseUs() {
@@ -73,16 +87,16 @@ const WhyChooseUs = memo(function WhyChooseUs() {
         >
           <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight tracking-tight text-white mb-4 sm:mb-6">
             <span className="bg-gradient-to-r from-[#8b5cf6] via-[#a78bfa] to-[#ec4899] bg-clip-text text-transparent">
-              No venimos a competir. Venimos a dejar huella.
+              ¿Qué nos hace diferentes?
             </span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-6 sm:mb-8 px-4">
-            Nuestro objetivo no es hacer otra web más, sino construir experiencias digitales que dejen huella. Combinamos diseño UX/UI, desarrollo técnico y una visión centrada en resultados reales.
+          <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-6 sm:mb-8 px-4">
+            Queremos dejar huella y sentimos pasión por lo que hacemos. Nuestro objetivo no es hacer web, sino construir experiencias digitales que impacten positivamente y que hagan crecer tu negocio.
           </p>
         </motion.div>
 
         {/* Grid de razones con diseño único */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8">
           {reasons.map((reason, index) => (
             <motion.div
               key={reason.id}
@@ -90,7 +104,7 @@ const WhyChooseUs = memo(function WhyChooseUs() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-black/30 via-[#1a0b2e]/20 to-black/40 backdrop-blur-2xl backdrop-saturate-150 p-6 sm:p-8 shadow-2xl transition-all duration-700 hover:border-[#8b5cf6]/30 hover:shadow-[0_25px_50px_-12px_rgba(139,92,246,0.4)] hover:scale-[1.03]"
+              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-black/30 via-[#1a0b2e]/20 to-black/40 backdrop-blur-2xl backdrop-saturate-150 p-6 sm:p-8 shadow-2xl transition-all duration-700 hover:border-[#8b5cf6]/30 hover:shadow-[0_25px_50px_-12px_rgba(139,92,246,0.4)] md:hover:scale-[1.03]"
               style={{
                 transformStyle: 'preserve-3d',
                 perspective: '1000px'
@@ -107,42 +121,42 @@ const WhyChooseUs = memo(function WhyChooseUs() {
                 }`} />
 
               {/* Efectos de hover únicos */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#8b5cf6]/5 via-transparent to-[#a78bfa]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#8b5cf6]/5 via-transparent to-[#a78bfa]/5 opacity-0 md:group-hover:opacity-100 transition-opacity duration-700" />
 
               {/* Borde animado */}
-              <div className="absolute inset-0 rounded-3xl border border-transparent bg-gradient-to-r from-[#8b5cf6]/20 via-[#a78bfa]/10 to-[#ec4899]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{ mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)', maskComposite: 'xor' }} />
+              <div className="absolute inset-0 rounded-3xl border border-transparent bg-gradient-to-r from-[#8b5cf6]/20 via-[#a78bfa]/10 to-[#ec4899]/20 opacity-0 md:group-hover:opacity-100 transition-opacity duration-700" style={{ mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)', maskComposite: 'xor' }} />
 
               <div className="relative z-10">
                 {/* Icono con efecto 3D */}
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-[#8b5cf6]/30 to-[#a78bfa]/20 border border-white/20 mb-4 sm:mb-6 group-hover:from-[#8b5cf6]/40 group-hover:to-[#a78bfa]/30 transition-all duration-500 shadow-lg group-hover:shadow-[0_10px_30px_rgba(139,92,246,0.3)] group-hover:scale-110">
-                  <div className="text-white group-hover:text-[#a78bfa] transition-colors duration-500 group-hover:rotate-12">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-[#8b5cf6]/30 to-[#a78bfa]/20 border border-white/20 mb-4 sm:mb-6 md:group-hover:from-[#8b5cf6]/40 md:group-hover:to-[#a78bfa]/30 transition-all duration-500 shadow-lg md:group-hover:shadow-[0_10px_30px_rgba(139,92,246,0.3)] md:group-hover:scale-110">
+                  <div className="text-white md:group-hover:text-[#a78bfa] transition-colors duration-500 md:group-hover:rotate-12">
                     {reason.icon}
                   </div>
                 </div>
 
                 {/* Título con efecto especial */}
-                <h3 className="font-heading text-xl sm:text-2xl text-white mb-2 sm:mb-3 group-hover:scale-105 transition-transform duration-300">
+                <h3 className="font-heading text-2xl text-white mb-2 sm:mb-3 transition-transform duration-300">
                   <span className="bg-gradient-to-r from-[#8b5cf6] to-[#a78bfa] bg-clip-text text-transparent group-hover:from-[#a78bfa] group-hover:to-[#ec4899] transition-all duration-500">
                     {reason.title}
                   </span>
                 </h3>
 
                 {/* Descripción */}
-                <p className="text-lg sm:text-xl text-white/90 mb-3 sm:mb-4 font-medium group-hover:text-white transition-colors duration-300">
+                <p className="text-xl text-white/90 mb-3 sm:mb-4 font-medium group-hover:text-white transition-colors duration-300">
                   {reason.description}
                 </p>
 
                 {/* Detalles */}
-                <p className="text-sm sm:text-base text-white/70 leading-relaxed group-hover:text-white/80 transition-colors duration-300">
+                <p className="text-lg  text-white/70 leading-relaxed group-hover:text-white/80 transition-colors duration-300">
                   {reason.details}
                 </p>
               </div>
 
               {/* Efectos de borde glass mejorados */}
-              <div className="absolute inset-0 rounded-3xl border border-white/5 bg-gradient-to-r from-white/5 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <div className="absolute inset-0 rounded-3xl border border-white/5 bg-gradient-to-r from-white/5 via-transparent to-white/5 opacity-0 md:group-hover:opacity-100 transition-opacity duration-700" />
 
               {/* Partículas flotantes en hover */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+              <div className="absolute inset-0 opacity-0 md:group-hover:opacity-100 transition-opacity duration-700">
                 <div className="absolute top-4 left-4 w-2 h-2 bg-[#8b5cf6]/60 rounded-full animate-pulse" style={{ animationDelay: '0s' }} />
                 <div className="absolute top-8 right-6 w-1 h-1 bg-[#a78bfa]/60 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }} />
                 <div className="absolute bottom-6 left-8 w-1.5 h-1.5 bg-[#ec4899]/60 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />

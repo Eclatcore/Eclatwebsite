@@ -6,7 +6,7 @@ const timelineSteps = [
   {
     id: 1,
     title: "Análisis y descubrimiento ",
-    description: "Generamos y concretamos un plan de investigación basado en el UX",
+    description: "Generamos y concretamos un plan de investigación exhaustivo",
     details: "Resultado: Comprensión profunda de tu negocio, usuarios y objetivos.",
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -127,11 +127,11 @@ const Timeline = memo(function Timeline() {
                         </span>
                       </h3>
 
-                      <p className="text-lg sm:text-xl text-white/90 mb-3 sm:mb-4 font-medium">
+                      <p className="text-lg text-white/90 mb-3 sm:mb-4 font-medium">
                         {step.description}
                       </p>
 
-                      <p className="text-sm sm:text-base text-white/70 leading-relaxed">
+                      <p className="text-lg text-white/70 leading-relaxed">
                         {step.details}
                       </p>
                     </div>

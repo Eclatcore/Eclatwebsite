@@ -25,7 +25,7 @@ export default function AboutUs() {
       {/* Bloque 1: Título gigante e introducción */}
       <div className="relative z-30 flex mb-10 w-full justify-start text-left max-w-7xl px-0 lg:px-4">
         <div
-          className="max-w-4xl text-white"
+          className="w-full lg:max-w-3xl text-white"
         >
           {/* H2: entra desde abajo con fade + blur suave al entrar en viewport */}
           <motion.h2
@@ -33,17 +33,17 @@ export default function AboutUs() {
             whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
             viewport={{ once: true, amount: 0.6 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="will-change-[opacity,transform,filter] font-heading text-4xl md:text-6xl lg:text-5xl leading-[1.05] tracking-tight"
+            className="will-change-[opacity,transform,filter] font-heading text-4xl md:text-6xl lg:text-6xl leading-[1.05] tracking-tight"
           >
             <span className="relative inline-block group">
               <span className="bg-gradient-to-r from-[#8b5cf6] via-[#a78bfa] to-[#a78bfa] bg-clip-text text-transparent drop-shadow-[0_6px_30px_rgba(139,92,246,0.35)]">
-                No venimos a competir, venimos a ofrecerte resultados reales: marcas que conectan, webs que convierten y experiencias digitales que perduran
+                No llegamos a competir, llegamos a destacar ofreciento resultados reales.
               </span>
             </span>
           </motion.h2>
 
-          <p className="mt-6 text-lg md:text-xl text-white/85 w-full lg:w-[90%]">
-            Somos un estudio digital que une estrategia, diseño UX/UI y desarrollo para transformar marcas en experiencias memorables. No construimos webs, construimos resultados: proyectos medibles, sostenibles y con propósito
+          <p className="mt-6 text-xl text-white/85 w-full lg:w-[90%]">
+            En Éclat combinamos estrategia, diseño y tecnología, no hacemos “una web más”. Creamos experiencias digitales capaces de generar impacto.
           </p>
         </div>
       </div>
@@ -71,11 +71,10 @@ export default function AboutUs() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
               </div>
-              <h3 className="font-heading text-2xl md:text-3xl">Estrategia primero</h3>
+              <h3 className="font-heading text-2xl ">Estrategia primero</h3>
             </div>
-            <p className="text-white/85">
-              Definimos objetivos claros, público y propuesta de valor. Cada decisión de diseño y
-              tecnología se alinea con un objetivo de negocio.
+            <p className="text-white/85 text-lg">
+              Cada proyecto comienza con una auditoría y objetivos claros. Definimos tu público, propuesta de valor y estrategia visual desde el inicio.
             </p>
           </div>
           <div
@@ -92,10 +91,10 @@ export default function AboutUs() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="font-heading text-2xl md:text-3xl">Ejecución precisa</h3>
+              <h3 className="font-heading text-2xl">Ejecución precisa</h3>
             </div>
-            <p className="text-white/85">
-              Definimos objetivos, público y propuesta de valor para que cada decisión de diseño o desarrolloe tnga un propósito: hacer crecer tu negocio.
+            <p className="text-white/85 text-lg">
+              Convertimos la estrategia en acción: diseño y desarrollo alineados para hacer crecer tu negocio con sentido y resultados medibles.
             </p>
           </div>
         </motion.div>

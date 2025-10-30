@@ -37,7 +37,7 @@ export default function Services() {
               Nuestros tres pilares
             </span>
           </h2>
-          <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto">
+          <p className="text-xl text-white/80 max-w-3xl mx-auto">
             Éclat nace de la unión entre el diseño de experiencia, la ingeniería web y la psicología del usuario.
           </p>
         </motion.div>
@@ -56,7 +56,7 @@ export default function Services() {
           />
           <CardService
             title="Desarrollo web profesional"
-            description="Cuando desarrollamos nos aseguramos que sea una web: limpia, segura, escalable y con un rendimiento optimizado para buscadores y usuarios."
+            description="Nuestras webs son limpias, seguras, escalables y con un rendimiento optimizado para buscadores y usuarios."
             delay={0.1}
             icon={
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -66,7 +66,7 @@ export default function Services() {
           />
           <CardService
             title="Estrategia de crecimiento digital"
-            description="Lo que define si una web triunfa o no es su analisis previo, por eso, cada proyecto parte de un diagnóstico real y una visión orientada a la rentabilidad."
+            description="No diseñamos a ciegas. Cada web nace de un diagnóstico real y un plan orientado a rentabilidad y expansión."
             delay={0.2}
             icon={
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="absolute -bottom-40 -right-40 h-80 w-80 rounded-full bg-gradient-to-br from-[#ec4899]/15 to-[#f472b6]/8 blur-3xl animate-pulse" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 py-16">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 py-10 lg:py-16">
         <div className="grid gap-10 md:grid-cols-3 lg:grid-cols-4">
           {/* Columna 1 */}
           <div>

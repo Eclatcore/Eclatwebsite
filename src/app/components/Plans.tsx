@@ -5,32 +5,35 @@ import PlanCard from "./ui/PlanCard";
 const plansData = [
     {
         title: "Básico",
-        price: "300€",
-        maintenance: "Todo el sitio web + 15€/mes por mantenimiento (opcional)",
+        price: "280€",
+        oldPrice: "392€",
+        maintenance: "Todo el sitio web + mantenimiento opcional de 15€/mes si prefieres que lo gestionemos todo",
         features: [
-            "Página web de 4 secciones",
+            "Hasta 4 secciones personalizadas",
             "Diseño responsive (adaptado a todos los dispositivos)",
-            "SEO para aparecer en buscadores",
+            "SEO para mejorar visibilidad en buscadores",
             "Formulario de contacto profesional",
-            "Hosting 1 año incluido",
-            "Regalo de bienvenida: Análisis gratuito de tu marca y asesoría de color y tipografía",
-            "Informe inicial de rendimiento web"
+            "Hosting incluido durante 1 año",
+            "Regalo de bienvenida: Análisis de marca y asesoría de color y tipografía",
+            "Soporte continuo durante el proceso de creación"
         ],
         buttonText: "Elegir plan",
         delay: 0
     },
     {
         title: "Premium",
-        price: "350€",
-        maintenance: "Todo el sitio web + 25€/mes de mantenimiento por 12 meses (opcional)",
+        price: "340€",
+        oldPrice: "476€",
+        maintenance: "Todo el sitio web + mantenimiento opcional 25€/mes si prefieres que lo gestionemos todo",
         features: [
-            "Web profesional personalizada",
+            "Sitio web profesional totalmente personalizado",
             "Diseño responsive (adaptado a todos los dispositivos)",
-            "SEO para aparecer en buscadores",
-            "Hosting 1 año incluido",
-            "Mantenimiento por 12 meses",
-            "Regalo: Optimización de velocidad y diseño UX mejorado",
-            "Cambios ilimitados"
+            "SEO para mejorar visibilidad en buscadores",
+            "Hosting incluido durante 1 año",
+            "Actualizaciones por temporada (Navidad, verano, Halloween, etc.)",
+            "Análisis mensual de tráfico durante 12 meses",
+            "Éclat Writer: genera contenido semanal con IA para mantener tu web activa y visible.",
+            "Soporte y acompañamiento continuo"
         ],
         buttonText: "Quiero empezar ahora",
         isPremium: true,
@@ -38,18 +41,25 @@ const plansData = [
     },
     {
         title: "Empresarial",
-        price: "800€",
-        maintenance: "+ 40€/mes por mantenimiento",
+        price: "700€",
+        oldPrice: "980€",
+        maintenance: "Todo el sitio web + mantenimiento opcional de 40€/mes si prefieres que lo gestionemos todo",
         features: [
-            "Página web ilimitada",
-            "Diseño premium",
-            "SEO completo",
-            "E-commerce básico",
-            "Panel de administración",
+            "Web ilimitada con diseño premium UX/UI",
+            "Diseño responsive (adaptado a todos los dispositivos)",
+            "SEO avanzado y auditoría inicial",
+            "E-commerce (tienda online)",
+            "Hosting incluido durante 2 años",
+            "Actualizaciones de diseño por temporada y eventos",
+            "Reportes trimestrales de posicionamiento SEO y rendimiento",
+            "Soporte técnico y estratégico prioritario",
+            "Branding digital (logo, colores, guía visual)",
+            "Éclat Writer Pro: crea y programa contenido inteligente con IA alineado a tu estrategia.   "
         ],
         buttonText: "Elegir plan",
         delay: 0.2
     }
+
 ];
 
 export default function Plans() {
@@ -74,37 +84,24 @@ export default function Plans() {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-10">
+            <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-10 lg:py-20">
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                    className="text-center mb-16"
+                    className="text-center"
                 >
                     <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight tracking-tight text-white mb-4 sm:mb-6">
                         <span className="bg-gradient-to-r from-[#8b5cf6] via-[#a78bfa] to-[#ec4899] bg-clip-text text-transparent">
                             Nuestros planes
                         </span>
                     </h2>
-                    <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-6 sm:mb-8 px-4">
+                    <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8 lg:mb-16 px-4">
                         Soluciones web completas para impulsar tu negocio digital
                     </p>
 
-                    {/* Botón como en Hero */}
-                    <motion.a
-                        href="#contacto"
-                        className="group relative inline-flex items-center justify-center rounded-full px-6 sm:px-8 py-3 sm:py-3.5 font-semibold text-white ring-2 ring-[#a78bfa]/70 bg-gradient-to-r from-[#8b5cf6]/70 via-[#8b5cf6]/45 to-[#8b5cf6]/25 shadow-[0_12px_40px_-16px_rgba(139,92,246,0.75)] transition-all duration-300 hover:from-[#8b5cf6]/80 hover:via-[#8b5cf6]/55 hover:to-[#8b5cf6]/35 hover:shadow-[0_16px_50px_-14px_rgba(139,92,246,0.8)] hover:ring-[#a78bfa]/80 hover:scale-[1.02] active:scale-[0.98] text-sm sm:text-base"
-                        whileHover={{ y: -2 }}
-                        whileTap={{ scale: 0.98 }}
-                    >
-                        <span className="relative z-10 drop-shadow-[0_2px_8px_rgba(139,92,246,0.6)]">Ver todos los planes</span>
-                        <span className="pointer-events-none absolute inset-0 overflow-hidden rounded-full">
-                            <span className="absolute -left-10 top-0 h-full w-10 translate-x-0 skew-x-[-20deg] bg-[#8b5cf6]/60 blur-md opacity-0 transition-transform duration-700 ease-out group-hover:translate-x-[140%] group-hover:opacity-70"></span>
-                            <span className="absolute -inset-1 rounded-full bg-[#8b5cf6]/30 blur-2xl opacity-100 transition-opacity duration-300 group-hover:bg-[#8b5cf6]/40" />
-                        </span>
-                    </motion.a>
                 </motion.div>
 
                 {/* Plans Grid - Responsive */}
@@ -114,6 +111,7 @@ export default function Plans() {
                             key={plan.title}
                             title={plan.title}
                             price={plan.price}
+                            oldPrice={(plan as any).oldPrice}
                             maintenance={plan.maintenance}
                             features={plan.features}
                             buttonText={plan.buttonText}
@@ -129,7 +127,7 @@ export default function Plans() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                    className="group relative overflow-hidden rounded-2xl border border-white/20 bg-gradient-to-br from-white/8 via-white/5 to-white/3 backdrop-blur-2xl p-6 sm:p-8 transition-all duration-500 hover:border-white/30 hover:shadow-[0_25px_50px_-12px_rgba(139,92,246,0.3)] w-full max-w-2xl mx-auto"
+                    className="group relative overflow-hidden rounded-2xl border border-white/20 bg-gradient-to-br from-white/8 via-white/5 to-white/3 backdrop-blur-2xl p-6 sm:p-8 transition-all duration-500 hover:border-white/30 hover:shadow-[0_25px_50px_-12px_rgba(139,92,246,0.3)] w-full max-w-7xl mx-auto"
                 >
                     {/* Efectos de fondo glass sutiles */}
                     <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/8" />
@@ -143,15 +141,10 @@ export default function Plans() {
                     {/* Contenido elegante */}
                     <div className="relative z-10 text-center">
                         {/* Badge sutil */}
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
-                            className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 border border-white/20 mb-4"
-                        >
-                            <span className="text-white/80 font-medium text-sm">Oferta especial</span>
-                        </motion.div>
+                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#8b5cf6]/20 to-[#ec4899]/20 border border-white/20 backdrop-blur-sm mb-6">
+                            <span className="text-sm font-medium text-white/90">Oferta especial</span>
+                        </div>
+                        
 
                         {/* Título elegante */}
                         <motion.h3
@@ -159,10 +152,10 @@ export default function Plans() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.7, delay: 0.3 }}
-                            className="font-heading text-2xl sm:text-3xl text-white mb-3"
+                            className="font-heading text-3xl lg:text-4xl text-white mb-3"
                         >
                             <span className="bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
-                                Descuento del 40%
+                                Descuento exclusivo del 40%
                             </span>
                         </motion.h3>
 
@@ -172,23 +165,12 @@ export default function Plans() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.7, delay: 0.4 }}
-                            className="text-white/70 text-sm sm:text-base mb-6"
+                            className="text-white/70 text-lg mb-6 max-w-4xl mx-auto"
                         >
-                            Válido hasta final de mes
+                            Solo hasta final de mes. Es el momento perfecto para impulsar tu presencia digital con una web estratégica, moderna y lista para crecer.
                         </motion.p>
 
-                        {/* Descripción elegante */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 15 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.7, delay: 0.5 }}
-                            className="text-white/60 text-sm mb-6"
-                        >
-                            <p>
-                                Aprovecha esta oportunidad para impulsar tu presencia digital
-                            </p>
-                        </motion.div>
+
 
                         {/* Botón elegante */}
                         <motion.a
@@ -197,11 +179,10 @@ export default function Plans() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.7, delay: 0.6 }}
-                            className="group/btn relative inline-flex items-center justify-center rounded-full px-6 py-3 font-medium text-white border border-white/30 bg-white/10 backdrop-blur-xl transition-all duration-300 hover:border-white/50 hover:bg-white/15 hover:scale-[1.02] active:scale-[0.98] text-sm"
-                            whileHover={{ y: -1 }}
+                            className="group/btn relative inline-flex items-center justify-center rounded-full px-6 py-3 font-medium text-white border border-white/30 bg-white/10 backdrop-blur-xl transition-all duration-300 hover:border-white/50 hover:bg-white/15 hover:scale-[1.02] active:scale-[0.98]"
                             whileTap={{ scale: 0.98 }}
                         >
-                            <span className="relative z-10">Aprovechar oferta</span>
+                            <span className="relative z-10">Quiero saber más</span>
                             <span className="pointer-events-none absolute inset-0 rounded-full bg-white/5 opacity-0 transition-opacity duration-300 group-hover/btn:opacity-100" />
                         </motion.a>
                     </div>
