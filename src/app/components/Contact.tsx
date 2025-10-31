@@ -52,7 +52,10 @@ const Contact = memo(function Contact() {
                 setSubmitStatus('error');
                 try {
                     const data = await response.json();
-                    setErrorMessage(data?.message || 'Error desconocido al enviar.');
+                    const missingList = Array.isArray((data as any)?.missing) && (data as any).missing.length
+                        ? ` | Faltan: ${((data as any).missing as string[]).join(', ')}`
+                        : '';
+                    setErrorMessage((data as any)?.message ? `${(data as any).message}${missingList}` : 'Error desconocido al enviar.');
                 } catch {
                     setErrorMessage('No se pudo procesar la respuesta del servidor.');
                 }
