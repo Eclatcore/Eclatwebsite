@@ -72,9 +72,10 @@ const Hero = memo(function Hero() {
 
         <motion.div
           initial={isMobile ? { opacity: 1 } : { opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          animate={isMobile ? { opacity: 1 } : undefined}
+          whileInView={isMobile ? undefined : { opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.3, duration: 0.4 }}
+          transition={isMobile ? { duration: 0 } : { delay: 0.3, duration: 0.4 }}
           className="mt-4 lg:mt-8 w-full flex justify-center"
         >
           <Glass type="video" src="/videos/hero-video-web.mp4" />

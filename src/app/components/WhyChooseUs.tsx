@@ -70,7 +70,7 @@ const WhyChooseUs = memo(function WhyChooseUs() {
 
         {/* Patrón de líneas diagonales animadas */}
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_0%,rgba(139,92,246,0.1)_25%,transparent_50%,rgba(236,72,153,0.1)_75%,transparent_100%)] bg-[length:100px_100px] animate-pulse" />
+          <div className={`absolute inset-0 bg-[linear-gradient(45deg,transparent_0%,rgba(139,92,246,0.1)_25%,transparent_50%,rgba(236,72,153,0.1)_75%,transparent_100%)] bg-[length:100px_100px] ${isMobile ? '' : 'animate-pulse'}`} />
         </div>
 
 
@@ -87,10 +87,11 @@ const WhyChooseUs = memo(function WhyChooseUs() {
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-4">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={isMobile ? { opacity: 1, y: 0 } : { opacity: 0 }}
+          animate={isMobile ? { opacity: 1, y: 0 } : undefined}
+          whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          transition={isMobile ? { duration: 0 } : { duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-12 sm:mb-16"
         >
           <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight tracking-tight text-white mb-4 sm:mb-6">
@@ -109,9 +110,10 @@ const WhyChooseUs = memo(function WhyChooseUs() {
             <motion.div
               key={reason.id}
               initial={isMobile ? { opacity: 1 } : { opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              animate={isMobile ? { opacity: 1 } : undefined}
+              whileInView={isMobile ? undefined : { opacity: 1 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: index * 0.1 }}
+              transition={isMobile ? { duration: 0 } : { duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: index * 0.1 }}
               className="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-black/30 via-[#1a0b2e]/20 to-black/40 backdrop-blur-2xl backdrop-saturate-150 p-6 sm:p-8 shadow-2xl transition-all duration-700 hover:border-[#8b5cf6]/30 hover:shadow-[0_25px_50px_-12px_rgba(139,92,246,0.4)] md:hover:scale-[1.03]"
               style={{
                 transformStyle: 'preserve-3d',
@@ -176,10 +178,11 @@ const WhyChooseUs = memo(function WhyChooseUs() {
 
         {/* Call to action */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          animate={isMobile ? { opacity: 1, y: 0 } : undefined}
+          whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.6 }}
+          transition={isMobile ? { duration: 0 } : { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.6 }}
           className="text-center mt-12 sm:mt-16"
         >
           <motion.a

@@ -46,9 +46,10 @@ export default function PlanCard({
   return (
     <motion.div
       initial={isMobile ? { opacity: 1 } : { opacity: 0 }}
-      whileInView={{ opacity: 1 }}
+      animate={isMobile ? { opacity: 1 } : undefined}
+      whileInView={isMobile ? undefined : { opacity: 1 }}
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay }}
+      transition={isMobile ? { duration: 0 } : { duration: 0.8, ease: [0.22, 1, 0.36, 1], delay }}
       className={`group relative overflow-hidden rounded-2xl sm:rounded-3xl p-6 sm:p-8 transition-all duration-500 w-full max-w-md h-full flex flex-col ${cardClasses}`}
       style={isPremium ? {
         boxShadow: 'inset 0 0 60px rgba(167,139,250,0.1), 0 0 40px rgba(167,139,250,0.4), 0 0 0 2px rgba(167,139,250,0.3), 0 0 20px rgba(167,139,250,0.2)'

@@ -1,14 +1,22 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { memo } from "react";
+import { memo, useEffect, useState } from "react";
 
 type Props =
   | { type: "image"; src: string; alt?: string }
   | { type: "video"; src: string; poster?: string; autoPlay?: boolean; loop?: boolean; muted?: boolean };
 
 const GlassMedia = memo(function GlassMedia(props: Props) {
-    const USE_VIDEO = props.type === "video"; 
+    const USE_VIDEO = props.type === "video";
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+      const update = () => setIsMobile(window.innerWidth < 768);
+      update();
+      window.addEventListener("resize", update);
+      return () => window.removeEventListener("resize", update);
+    }, []);
   return (
     <section className="">
     {/* CONTENIDO */}
@@ -16,17 +24,18 @@ const GlassMedia = memo(function GlassMedia(props: Props) {
       <div className="space-y-6">
         {/* Contenedor estilo liquid glass alineado al header */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.4 }}
+          initial={isMobile ? { opacity: 1 } : { opacity: 0 }}
+          animate={isMobile ? { opacity: 1 } : undefined}
+          whileInView={isMobile ? undefined : { opacity: 1 }}
+          transition={isMobile ? { duration: 0 } : { duration: 0.4 }}
           viewport={{ once: true }}
           className="relative mt-6 mx-auto w-full max-w-[1200px] overflow-hidden rounded-[28px] border border-white/15 bg-black/10 shadow-xl backdrop-blur-xl backdrop-saturate-150 transition-all duration-300 ease-out hover:shadow-2xl"
         >
           {/* glow overlays sutiles */}
           <div className="pointer-events-none absolute inset-0">
             {/* brillos animados responsive */}
-            <div className="absolute -left-16 -top-16 sm:-left-20 sm:-top-20 lg:-left-28 lg:-top-28 h-32 w-32 sm:h-48 sm:w-48 lg:h-72 lg:w-72 rounded-full bg-gradient-to-tr from-[#a855f7]/40 via-white/10 to-transparent blur-2xl sm:blur-3xl animate-pulse" />
-            <div className="absolute -bottom-16 -right-16 sm:-bottom-20 sm:-right-20 lg:-bottom-28 lg:-right-28 h-32 w-32 sm:h-48 sm:w-48 lg:h-72 lg:w-72 rounded-full bg-gradient-to-tr from-[#ec4899]/35 via-white/5 to-transparent blur-2xl sm:blur-3xl animate-pulse" />
+            <div className={`absolute -left-16 -top-16 sm:-left-20 sm:-top-20 lg:-left-28 lg:-top-28 h-32 w-32 sm:h-48 sm:w-48 lg:h-72 lg:w-72 rounded-full bg-gradient-to-tr from-[#a855f7]/40 via-white/10 to-transparent blur-2xl sm:blur-3xl ${isMobile ? '' : 'animate-pulse'}`} />
+            <div className={`absolute -bottom-16 -right-16 sm:-bottom-20 sm:-right-20 lg:-bottom-28 lg:-right-28 h-32 w-32 sm:h-48 sm:w-48 lg:h-72 lg:w-72 rounded-full bg-gradient-to-tr from-[#ec4899]/35 via-white/5 to-transparent blur-2xl sm:blur-3xl ${isMobile ? '' : 'animate-pulse'}`} />
             {/* línea superior sutil tipo cristal */}
             <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-70" />
           </div>

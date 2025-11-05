@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { useState, memo } from "react";
+import { useState, memo, useEffect } from "react";
 
 const Contact = memo(function Contact() {
     const [formData, setFormData] = useState({
@@ -14,6 +14,14 @@ const Contact = memo(function Contact() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const update = () => setIsMobile(window.innerWidth < 768);
+        update();
+        window.addEventListener("resize", update);
+        return () => window.removeEventListener("resize", update);
+    }, []);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value, type } = e.target;
@@ -327,9 +335,10 @@ const Contact = memo(function Contact() {
 
                                 {/* Botón de agendar reunión con estilo de CardService */}
                                 <motion.button
-                                    initial={{ opacity: 0 }}
-                                    whileInView={{ opacity: 1 }}
-                                    transition={{ duration: 0.3 }}
+                                    initial={isMobile ? { opacity: 1 } : { opacity: 0 }}
+                                    animate={isMobile ? { opacity: 1 } : undefined}
+                                    whileInView={isMobile ? undefined : { opacity: 1 }}
+                                    transition={isMobile ? { duration: 0 } : { duration: 0.3 }}
                                     viewport={{ once: true }}
                                     className="group/btn relative inline-flex items-center px-6 py-1.5 rounded-full border border-white/20 bg-gradient-to-r from-[#8b5cf6]/20 via-[#a78bfa]/15 to-[#ec4899]/20 backdrop-blur-xl transition-all duration-300 hover:border-white/40 hover:shadow-lg overflow-hidden mt-4"
                                 >
