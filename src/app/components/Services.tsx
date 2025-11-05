@@ -38,7 +38,7 @@ export default function Services() {
             </span>
           </h2>
           <p className="text-lg lg:text-xl text-white/80 max-w-3xl mx-auto">
-            Éclat nace de la unión entre el diseño de experiencia, la ingeniería web y la psicología del usuario.
+            Éclat nace de la unión entre el diseño UX/UI, la ingeniería web y la estrategia de negocio.
           </p>
         </motion.div>
 
@@ -46,7 +46,7 @@ export default function Services() {
         <div className="mt-10 lg:mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3 items-stretch">
           <CardService
             title="Diseño web basado en evidencia"
-            description="Análisis exhaustivo de tus potenciales clientes. Diseñamos tu web con estrategias probadas para generar resultados."
+            description="Diseñamos tu web con estrategias probadas para generar resultados."
             delay={0}
             icon={
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -56,7 +56,7 @@ export default function Services() {
           />
           <CardService
             title="Desarrollo web profesional"
-            description="Nuestras webs son limpias, seguras, escalables y con un rendimiento optimizado para buscadores y usuarios."
+            description="Nuestras webs son seguras, escalables y con un rendimiento optimizado."
             delay={0.1}
             icon={
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -66,7 +66,7 @@ export default function Services() {
           />
           <CardService
             title="Estrategia de crecimiento digital"
-            description="No diseñamos a ciegas. Cada web nace de un diagnóstico real y un plan orientado a rentabilidad y expansión."
+            description="Cada web nace de un diagnóstico real y un plan orientado a rentabilidad."
             delay={0.2}
             icon={
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">

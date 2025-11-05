@@ -7,10 +7,9 @@ const testimonials = [
     id: 1,
     name: "María González",
     company: "Boutique Elegance",
-    role: "Directora de Marketing",
     image: "👩‍💼",
     rating: 5,
-    testimonial: "Éclat transformó completamente nuestra presencia digital. En solo 3 meses aumentamos nuestras ventas online un 150%. Su enfoque estratégico y diseño excepcional superó todas nuestras expectativas.",
+    testimonial: "Éclat transformó completamente nuestra presencia digital. En solo 3 meses aumentamos nuestras ventas online un 80%. Su enfoque estratégico y diseño excepcional superó todas nuestras expectativas.",
     results: [
       { metric: "+150%", label: "Ventas online" },
       { metric: "+200%", label: "Tráfico web" },
@@ -23,7 +22,6 @@ const testimonials = [
     id: 2,
     name: "Carlos Mendoza",
     company: "TechStart Solutions",
-    role: "CEO",
     image: "👨‍💻",
     rating: 5,
     testimonial: "El equipo de Éclat no solo desarrolló nuestra web, sino que nos ayudó a entender el comportamiento de nuestros usuarios. Su análisis UX/UI fue clave para nuestro crecimiento exponencial.",
@@ -39,7 +37,6 @@ const testimonials = [
     id: 3,
     name: "Ana Rodríguez",
     company: "Wellness Center",
-    role: "Fundadora",
     image: "👩‍⚕️",
     rating: 5,
     testimonial: "Desde que trabajamos con Éclat, nuestra marca ha ganado una credibilidad increíble. Su diseño profesional y estrategia digital nos posicionó como líderes en nuestro sector.",
@@ -77,10 +74,10 @@ const Testimonials = memo(function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-16"
+          className="text-center mb-10 lg:mb-16"
         >
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#8b5cf6]/20 to-[#ec4899]/20 border border-white/20 backdrop-blur-sm mb-6">
-            <span className="text-sm font-medium text-white/90">Casos de éxito</span>
+            <span className="font-medium text-white/90">Casos de éxito</span>
           </div>
           
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-white mb-6">
@@ -90,8 +87,7 @@ const Testimonials = memo(function Testimonials() {
           </h2>
           
           <p className="text-xl text-white/80 max-w-3xl mx-auto">
-            Nuestros clientes han experimentado transformaciones increíbles en sus negocios. 
-            <span className="font-semibold"> Sus resultados son nuestra mejor carta de presentación.</span>
+            Nuestros clientes han experimentado transformaciones increíbles en sus negocios.
           </p>
         </motion.div>
 
@@ -151,7 +147,6 @@ const Testimonials = memo(function Testimonials() {
                           </span>
                         </h3>
                         <p className="text-white/80 text-lg font-medium">{testimonial.company}</p>
-                        <p className="text-white/60 text-base">{testimonial.role}</p>
                       </div>
                     </div>
 

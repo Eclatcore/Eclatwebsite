@@ -6,7 +6,7 @@ const timelineSteps = [
   {
     id: 1,
     title: "Análisis y descubrimiento ",
-    description: "Generamos y concretamos un plan de investigación exhaustivo",
+    description: "Generamos un plan de investigación exhaustivo",
     details: "Resultado: Comprensión profunda de tu negocio, usuarios y objetivos.",
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -17,7 +17,7 @@ const timelineSteps = [
   {
     id: 2,
     title: " Diseño UX/UI ",
-    description: "Diseñamos una web moderna centrada en una experiencia de usuario intuitiva y atractiva.",
+    description: "Diseñamos una web moderna centrada en una excelente experiencia de usuario.",
     details: "Resultado: una experiencia digital fluida, visualmente cuidada y alineada con los objetivos de tu negocio.",
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -39,7 +39,7 @@ const timelineSteps = [
   {
     id: 4,
     title: "Entrega y evaluación",
-    description: "Te presentamos el producto final y realizamos evaluaciones basadas en métricas y pruebas reales.",
+    description: "Te presentamos el producto final y realizamos evaluaciones.",
     details: "Resultado: Una web lista para impulsar tu negocio y cumplir tus objetivos",
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -86,8 +86,7 @@ const Timeline = memo(function Timeline() {
             </span>
           </h2>
           <p className="text-lg lg:text-xl text-white/80 max-w-3xl mx-auto mb-6 sm:mb-8 px-4">
-            Cada etapa del trabajo se basa en investigación, diseño iterativo y validación constante.
-            El resultado: productos digitales que cumplen sus objetivos.
+            Cada etapa del trabajo se basa en investigación, diseño iterativo y validación.
           </p>
         </motion.div>
 

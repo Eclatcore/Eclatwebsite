@@ -7,7 +7,7 @@ const reasons = [
     id: 1,
     title: "Análisis y métricas incluidos",
     description: "Decisiones basadas en datos reales",
-    details: "Desde el primer día analizamos tu marca y tus usuarios para definir una estrategia ganadora. Obtendrás reportes con métricas claras durante todo el proceso.",
+    details: "Obtendrás reportes con métricas claras durante todo el proceso.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
@@ -18,7 +18,7 @@ const reasons = [
     id: 2,
     title: "Diseño 100% personalizado",
     description: "No usamos plantillas, diseñamos experiencias",
-    details: "Cada web refleja la esencia de tu marca y sigue las tendencias más actuales con enfoque en el diseño UX/UI, creamos experiencia únicas.",
+    details: "Cada web refleja la esencia de tu marca y sigue las tendencias más actuales.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
@@ -29,7 +29,7 @@ const reasons = [
     id: 3,
     title: "Soporte y acompañamiento continuo",
     description: "No te dejamos solo después del lanzamiento",
-    details: "Siempre tendrás asistencia y guía. Incluimos un manual para que puedas gestionar tu web y soporte continuo cuando lo necesites.",
+    details: "Incluimos un manual de uso personalizado y soporte continuo cuando lo necesites.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -40,7 +40,7 @@ const reasons = [
     id: 4,
     title: "Actualizaciones por temporada",
     description: "Tu web evoluciona contigo",
-    details: "En el plan Premium puedes adaptar el diseño de tu web a cada temporada o evento: Navidad, verano, Halloween o cualquier fecha especial para tu marca.",
+    details: "En el plan Premium puedes adaptar tu web a cada temporada o fecha especial.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10m-9 4h5m6-9H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V7a2 2 0 00-2-2z" />
@@ -99,7 +99,7 @@ const WhyChooseUs = memo(function WhyChooseUs() {
             </span>
           </h2>
           <p className="text-lg lg:text-xl text-white/80 max-w-3xl mx-auto mb-6 sm:mb-8 px-4">
-            Queremos dejar huella y sentimos pasión por lo que hacemos. Nuestro objetivo no es hacer web, sino construir experiencias digitales que impacten positivamente y que hagan crecer tu negocio.
+            Queremos dejar huella. Nuestro objetivo es construir experiencias digitales que impacten positivamente.
           </p>
         </motion.div>
 
@@ -188,7 +188,7 @@ const WhyChooseUs = memo(function WhyChooseUs() {
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.98 }}
           >
-            <span className="relative z-10 drop-shadow-[0_2px_8px_rgba(139,92,246,0.6)]">Trabajar con nosotros</span>
+            <span className="relative z-10 drop-shadow-[0_2px_8px_rgba(139,92,246,0.6)]">Saber más</span>
             <span className="pointer-events-none absolute inset-0 overflow-hidden rounded-full">
               <span className="absolute -left-10 top-0 h-full w-10 translate-x-0 skew-x-[-20deg] bg-[#8b5cf6]/60 blur-md opacity-0 transition-transform duration-700 ease-out group-hover:translate-x-[140%] group-hover:opacity-70"></span>
               <span className="absolute -inset-1 rounded-full bg-[#8b5cf6]/30 blur-2xl opacity-100 transition-opacity duration-300 group-hover:bg-[#8b5cf6]/40" />

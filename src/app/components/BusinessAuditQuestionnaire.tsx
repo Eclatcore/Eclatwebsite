@@ -206,7 +206,7 @@ const BusinessAuditQuestionnaire = memo(function BusinessAuditQuestionnaire() {
           className="text-center mb-12"
         >
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#8b5cf6]/20 to-[#ec4899]/20 border border-white/20 backdrop-blur-sm mb-6">
-            <span className="text-sm font-medium text-white/90">Oferta limitada</span>
+            <span className="font-medium text-white/90">Oferta por tiempo limitado</span>
           </div>
 
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-white mb-4 leading-tight">
@@ -214,7 +214,7 @@ const BusinessAuditQuestionnaire = memo(function BusinessAuditQuestionnaire() {
           </h2>
 
           <p className="text-lg lg:text-xl text-white/80 max-w-2xl mx-auto">
-            Trazamos un plan para mejorar tu presencia digital y aumentar tus conversiones. <span className="font-semibold">Análisis completo por tiempo limitado.</span>
+            Trazamos un plan para mejorar tu presencia digital y aumentar tus conversiones.
           </p>
         </motion.div>
 

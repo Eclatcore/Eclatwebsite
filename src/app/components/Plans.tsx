@@ -176,7 +176,7 @@ export default function Plans() {
                             transition={{ duration: 0.7, delay: 0.4 }}
                             className="text-white/70 text-base lg:text-lg mb-6 max-w-4xl mx-auto"
                         >
-                            Solo hasta final de mes. Es el momento perfecto para impulsar tu presencia digital con una web estratégica, moderna y lista para crecer.
+                            Solo hasta final de mes. Es el momento perfecto una web estratégica, moderna y lista para crecer.
                         </motion.p>
 
 
