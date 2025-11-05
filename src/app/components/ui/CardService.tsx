@@ -31,16 +31,17 @@ export default function CardService({
   return (
     <motion.div
       initial={isMobile ? { opacity: 1 } : { opacity: 0 }}
-      whileInView={{ opacity: 1 }}
+      animate={isMobile ? { opacity: 1 } : undefined}
+      whileInView={isMobile ? undefined : { opacity: 1 }}
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay }}
+      transition={isMobile ? { duration: 0 } : { duration: 0.8, ease: [0.22, 1, 0.36, 1], delay }}
       className="group relative overflow-hidden rounded-3xl border border-white/20 bg-gradient-to-br from-white/8 via-white/5 to-white/3 p-8 backdrop-blur-2xl transition-all duration-500 hover:border-white/30 hover:shadow-2xl flex flex-col justify-between"
     >
       {/* Liquid glass background effects */}
       <div className="absolute inset-0 overflow-hidden rounded-3xl">
         {/* Animated gradient orbs */}
-        <div className="absolute -top-20 -left-20 h-40 w-40 rounded-full bg-gradient-to-br from-[#8b5cf6]/20 to-[#a78bfa]/10 blur-2xl animate-pulse" />
-        <div className="absolute -bottom-20 -right-20 h-40 w-40 rounded-full bg-gradient-to-br from-[#ec4899]/15 to-[#f472b6]/10 blur-2xl animate-pulse" />
+        <div className={`absolute -top-20 -left-20 h-40 w-40 rounded-full bg-gradient-to-br from-[#8b5cf6]/20 to-[#a78bfa]/10 blur-2xl ${isMobile ? '' : 'animate-pulse'}`} />
+        <div className={`absolute -bottom-20 -right-20 h-40 w-40 rounded-full bg-gradient-to-br from-[#ec4899]/15 to-[#f472b6]/10 blur-2xl ${isMobile ? '' : 'animate-pulse'}`} />
 
         {/* Subtle grid pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:20px_20px] opacity-50" />
