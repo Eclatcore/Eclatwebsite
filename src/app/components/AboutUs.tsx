@@ -1,7 +1,16 @@
 "use client";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export default function AboutUs() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const update = () => setIsMobile(window.innerWidth < 768);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
   return (
     <section
       id="nosotros"
@@ -29,10 +38,11 @@ export default function AboutUs() {
         >
           {/* H2: entra desde abajo con fade + blur suave al entrar en viewport */}
           <motion.h2
-            initial={{ y: 40, opacity: 0, filter: "blur(6px)" }}
-            whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+            initial={isMobile ? { y: 0, opacity: 1, filter: "blur(0px)" } : { y: 40, opacity: 0, filter: "blur(6px)" }}
+            animate={isMobile ? { y: 0, opacity: 1, filter: "blur(0px)" } : undefined}
+            whileInView={isMobile ? undefined : { y: 0, opacity: 1, filter: "blur(0px)" }}
             viewport={{ once: true, amount: 0.6 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={isMobile ? { duration: 0 } : { duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="will-change-[opacity,transform,filter] font-heading text-3xl md:text-6xl lg:text-6xl leading-[1.05] tracking-tight"
           >
             <span className="relative inline-block group">

@@ -1,11 +1,19 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Logo from "../ui/Logo";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const update = () => setIsMobile(window.innerWidth < 768);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -74,7 +82,7 @@ export default function Header() {
                 fill="none"
                 className="text-white"
                 animate={{ rotate: isMenuOpen ? 180 : 0 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
+                transition={{ duration: isMobile ? 0.1 : 0.3, ease: "easeInOut" }}
               >
                 {/* Hamburger lines / X lines */}
                 <motion.path
@@ -85,7 +93,7 @@ export default function Header() {
                   animate={{
                     d: isMenuOpen ? "M18 6L6 18" : "M3 12h18",
                   }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  transition={{ duration: isMobile ? 0.1 : 0.3, ease: "easeInOut" }}
                 />
                 <motion.path
                   d="M3 6h18"
@@ -96,7 +104,7 @@ export default function Header() {
                     opacity: isMenuOpen ? 0 : 1,
                     y: isMenuOpen ? 0 : 0,
                   }}
-                  transition={{ duration: 0.2 }}
+                  transition={{ duration: isMobile ? 0.05 : 0.2 }}
                 />
                 <motion.path
                   d="M3 18h18"
@@ -106,7 +114,7 @@ export default function Header() {
                   animate={{
                     d: isMenuOpen ? "M6 6L18 18" : "M3 18h18",
                   }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  transition={{ duration: isMobile ? 0.1 : 0.3, ease: "easeInOut" }}
                 />
               </motion.svg>
             </button>
@@ -124,18 +132,18 @@ export default function Header() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="fixed inset-0 lg:hidden z-40"
+              transition={{ duration: isMobile ? 0.05 : 0.3 }}
+              className="fixed inset-0 lg:hidden z-40 bg-black/50"
               onClick={closeMenu}
               style={{ zIndex: 40 }}
             />
 
             {/* Mobile Menu */}
             <motion.div
-              initial={{ opacity: 0, y: -20, scale: 0.95 }}
+              initial={isMobile ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: -20, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -20, scale: 0.95 }}
-              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              exit={isMobile ? { opacity: 0, y: 0, scale: 1 } : { opacity: 0, y: -20, scale: 0.95 }}
+              transition={{ duration: isMobile ? 0.05 : 0.3, ease: [0.22, 1, 0.36, 1] }}
               className="fixed top-20 left-4 right-4 rounded-2xl border border-white/15 bg-black/10 shadow-lg backdrop-blur-xl backdrop-saturate-150 supports-[backdrop-filter:blur(0)]:bg-black/10 overflow-hidden lg:hidden z-50 mt-4"
             >
               {/* liquid glass tint - igual al header */}
@@ -148,11 +156,11 @@ export default function Header() {
                 {menuItems.map((item, index) => (
                   <motion.li
                     key={item.href}
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={isMobile ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ 
-                      duration: 0.3, 
-                      delay: index * 0.1,
+                      duration: isMobile ? 0 : 0.3, 
+                      delay: isMobile ? 0 : index * 0.1,
                       ease: [0.22, 1, 0.36, 1]
                     }}
                   >
