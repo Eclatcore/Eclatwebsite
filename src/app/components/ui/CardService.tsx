@@ -63,7 +63,7 @@ export default function CardService({
             </div>    )}
 
           {/* Title with enhanced typography */}
-          <h3 className="font-heading text-3xl text-white mb-4 drop-shadow-sm group-hover:text-[#a78bfa] transition-colors duration-300">
+          <h3 className="font-heading text-2xl text-white mb-4 drop-shadow-sm group-hover:text-[#a78bfa] transition-colors duration-300">
             {title}
           </h3>
 

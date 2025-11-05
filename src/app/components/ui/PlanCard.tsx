@@ -83,7 +83,7 @@ export default function PlanCard({
           
         <div className="mb-4 sm:mb-6">
           <div className="flex items-baseline gap-3">
-            <div className={`font-bold ${isPremium ? 'text-5xl' : 'text-4xl'} text-white`}>
+            <div className={`font-bold text-4xl text-white`}>
               {price}
             </div>
             {oldPrice && (

@@ -31,7 +31,7 @@ const Hero = memo(function Hero() {
           initial={isMobile ? { opacity: 1 } : { opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mt-4 backdrop:font-heading text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-white"
+          className="mt-4 backdrop:font-heading text-3xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-white"
         >
           <span className="block">Transformamos tu negocio con </span>
           <span className="bg-gradient-to-r from-primary via-primary/100 to-primary-light bg-clip-text text-transparent">

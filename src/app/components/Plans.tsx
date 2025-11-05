@@ -115,7 +115,7 @@ export default function Plans() {
                 </motion.div>
 
                 {/* Plans Grid - Responsive */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-6 gap-10 mb-12 sm:mb-16 items-stretch">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-6 gap-10 mb-12 sm:mb-16 items-stretch px-4">
                     {plansData.map((plan, index) => (
                         <PlanCard
                             key={plan.title}
@@ -164,7 +164,7 @@ export default function Plans() {
                             whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={isMobile ? { duration: 0 } : { duration: 0.7, delay: 0.3 }}
-                            className="font-heading text-3xl lg:text-4xl text-white mb-3"
+                            className="font-heading text-2xl lg:text-4xl text-white mb-3"
                         >
                             <span className="bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
                                 Descuento exclusivo del 40%

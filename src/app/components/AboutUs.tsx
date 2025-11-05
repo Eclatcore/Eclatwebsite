@@ -5,7 +5,7 @@ export default function AboutUs() {
   return (
     <section
       id="nosotros"
-      className="relative min-h-[100vh] w-full overflow-hidden flex flex-col items-center justify-center px-6 py-10"
+      className="relative min-h-[80vh] lg:min-h-[100vh] w-full overflow-hidden flex flex-col items-center justify-center px-6 py-10"
     >
       {/* Video de fondo */}
       <video
@@ -33,7 +33,7 @@ export default function AboutUs() {
             whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
             viewport={{ once: true, amount: 0.6 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="will-change-[opacity,transform,filter] font-heading text-4xl md:text-6xl lg:text-6xl leading-[1.05] tracking-tight"
+            className="will-change-[opacity,transform,filter] font-heading text-3xl md:text-6xl lg:text-6xl leading-[1.05] tracking-tight"
           >
             <span className="relative inline-block group">
               <span className="bg-gradient-to-r from-[#8b5cf6] via-[#a78bfa] to-[#a78bfa] bg-clip-text text-transparent drop-shadow-[0_6px_30px_rgba(139,92,246,0.35)]">

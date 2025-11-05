@@ -106,7 +106,7 @@ const Contact = memo(function Contact() {
                     className="text-center mb-8 lg:mb-16"
                 >
                     <div className="max-w-3xl">
-                        <h2 className="font-heading text-4xl md:text-6xl text-start lg:text-7xl leading-tight tracking-tight text-white mb-6">
+                        <h2 className="font-heading text-3xl md:text-6xl text-start lg:text-7xl leading-tight tracking-tight text-white mb-6">
                             <span className="bg-gradient-to-r from-[#8b5cf6] via-[#a78bfa] to-[#a78bfa] bg-clip-text text-transparent">
                                 Contacta con nosotros
                             </span>

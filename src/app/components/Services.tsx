@@ -41,7 +41,7 @@ export default function Services() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-center"
         >
-          <h2 className="font-heading text-4xl md:text-6xl lg:text-7xl leading-tight tracking-tight text-white mb-6">
+          <h2 className="font-heading text-3xl md:text-6xl lg:text-7xl leading-tight tracking-tight text-white mb-6">
             <span className="bg-gradient-to-r from-[#8b5cf6] via-[#a78bfa] to-[#ec4899] bg-clip-text text-transparent">
               Nuestros tres pilares
             </span>

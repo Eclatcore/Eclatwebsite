@@ -80,7 +80,7 @@ const Testimonials = memo(function Testimonials() {
             <span className="font-medium text-white/90">Casos de éxito</span>
           </div>
           
-          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-white mb-6">
+          <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-white mb-6">
             <span className="bg-gradient-to-r from-[#8b5cf6] via-[#a78bfa] to-[#ec4899] bg-clip-text text-transparent">
               Resultados que hablan
             </span>

@@ -105,7 +105,7 @@ const WhyChooseUs = memo(function WhyChooseUs() {
         </motion.div>
 
         {/* Grid de razones con diseño único */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 lg:gap-6 gap-12">
           {reasons.map((reason, index) => (
             <motion.div
               key={reason.id}
