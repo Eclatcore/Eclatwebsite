@@ -20,6 +20,9 @@ interface FormData {
 const BusinessAuditQuestionnaire = memo(function BusinessAuditQuestionnaire() {
   const [currentStep, setCurrentStep] = useState(0);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [formData, setFormData] = useState<FormData>({
     businessType: "",
     hasWebsite: "",
@@ -148,10 +151,42 @@ const BusinessAuditQuestionnaire = memo(function BusinessAuditQuestionnaire() {
     }
   };
 
-  const handleSubmit = () => {
-    console.log("Form submitted:", formData);
-    // Aquí puedes enviar los datos a tu API
-    setShowSuccessModal(true);
+  const handleSubmit = async () => {
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    setErrorMessage(null);
+
+    try {
+      const response = await fetch('/api/audit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ...formData, sentAt: new Date().toISOString() }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setShowSuccessModal(true);
+      } else {
+        setSubmitStatus('error');
+        try {
+          const data = await response.json();
+          const missingList = Array.isArray((data as any)?.missing) && (data as any).missing.length
+            ? ` | Faltan: ${((data as any).missing as string[]).join(', ')}`
+            : '';
+          setErrorMessage((data as any)?.message ? `${(data as any).message}${missingList}` : 'Error desconocido al enviar.');
+        } catch {
+          setErrorMessage('No se pudo procesar la respuesta del servidor.');
+        }
+      }
+    } catch (error) {
+      console.error('Error sending audit:', error);
+      setSubmitStatus('error');
+      setErrorMessage('No se pudo conectar con el servidor.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const resetForm = () => {
@@ -171,6 +206,9 @@ const BusinessAuditQuestionnaire = memo(function BusinessAuditQuestionnaire() {
       contactPhone: "",
     });
     setShowSuccessModal(false);
+    setSubmitStatus('idle');
+    setErrorMessage(null);
+    setIsSubmitting(false);
   };
 
   const currentStepData = steps[currentStep];
@@ -344,17 +382,24 @@ const BusinessAuditQuestionnaire = memo(function BusinessAuditQuestionnaire() {
 
               <button
                 onClick={handleNext}
-                disabled={!isCurrentStepValid}
+                disabled={!isCurrentStepValid || isSubmitting}
                 className="group relative inline-flex items-center justify-center rounded-xl px-8 py-3 font-semibold text-white ring-2 ring-primary/70 bg-gradient-to-r from-primary/70 via-primary/45 to-primary/25 shadow-[0_12px_40px_-16px_rgba(139,92,246,0.75)] transition-all duration-300 hover:from-primary/80 hover:via-primary/55 hover:to-primary/35 hover:shadow-[0_16px_50px_-14px_rgba(139,92,246,0.8)] hover:ring-primary/80 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
                 <span className="relative z-10">
-                  {currentStep === steps.length - 1 ? "Obtener mi auditoría" : "Siguiente"}
+                  {isSubmitting ? "Enviando..." : currentStep === steps.length - 1 ? "Finalizar" : "Siguiente"}
                 </span>
                 <span className="pointer-events-none absolute inset-0 overflow-hidden rounded-xl">
                   <span className="absolute -left-10 top-0 h-full w-10 translate-x-0 skew-x-[-20deg] bg-primary/60 blur-md opacity-0 transition-transform duration-700 ease-out group-hover:translate-x-[140%] group-hover:opacity-70"></span>
                 </span>
               </button>
             </div>
+
+            {/* Mensajes de estado */}
+            {submitStatus === 'error' && (
+              <div className="mt-6 p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+                Error al enviar la auditoría. {errorMessage ? `Detalles: ${errorMessage}` : 'Por favor, inténtalo de nuevo.'}
+              </div>
+            )}
           </div>
         </motion.div>
 
