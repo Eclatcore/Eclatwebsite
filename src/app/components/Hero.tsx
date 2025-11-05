@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { memo } from "react";
+import { memo, useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 
 const Glass = dynamic(() => import("./ui/Glass"), {
@@ -9,6 +9,14 @@ const Glass = dynamic(() => import("./ui/Glass"), {
 });
 
 const Hero = memo(function Hero() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const update = () => setIsMobile(window.innerWidth < 768);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
   return (
     <section className="relative h-auto w-screen flex flex-col items-center justify-center px-4 text-center overflow-hidden pt-32 pb-16">
       {/* background gradient moderno: negro → lila → fucsia con glows sutiles */}
@@ -20,7 +28,7 @@ const Hero = memo(function Hero() {
       {/* contenido */}
       <div className="relative z-10">
         <motion.h1
-          initial={{ opacity: 0 }}
+          initial={isMobile ? { opacity: 1 } : { opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="mt-4 backdrop:font-heading text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-white"
@@ -32,7 +40,7 @@ const Hero = memo(function Hero() {
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0 }}
+          initial={isMobile ? { opacity: 1 } : { opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.1, duration: 0.4 }}
           className="mt-6 mb-8 max-w-2xl font-body text-lg lg:text-xl text-white/80 mx-auto"
@@ -41,7 +49,7 @@ const Hero = memo(function Hero() {
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={isMobile ? { opacity: 1 } : { opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.3 }}
           className="flex flex-wrap items-center justify-center gap-4"
@@ -63,7 +71,7 @@ const Hero = memo(function Hero() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={isMobile ? { opacity: 1 } : { opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3, duration: 0.4 }}

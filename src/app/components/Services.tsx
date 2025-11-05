@@ -1,8 +1,17 @@
 "use client";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import CardService from "./ui/CardService";
 
 export default function Services() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const update = () => setIsMobile(window.innerWidth < 768);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
   return (
     <section id="servicios" className="relative min-h-[100vh] w-full overflow-hidden">
       {/* Background más vivo */}
@@ -26,7 +35,7 @@ export default function Services() {
       {/* Content */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-10 lg:py-20">
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={isMobile ? { opacity: 1 } : { opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
