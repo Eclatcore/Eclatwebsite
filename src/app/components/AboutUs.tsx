@@ -47,13 +47,13 @@ export default function AboutUs() {
           >
             <span className="relative inline-block group">
               <span className="bg-gradient-to-r from-[#8b5cf6] via-[#a78bfa] to-[#a78bfa] bg-clip-text text-transparent drop-shadow-[0_6px_30px_rgba(139,92,246,0.35)]">
-                No llegamos a competir, llegamos a destacar.
+                Ideas grandiosas. Páginas que revolucionan el mercado.
               </span>
             </span>
           </motion.h2>
 
           <p className="mt-6 text-lg lg:text-xl text-white/85 w-full lg:w-[90%]">
-            En Éclat combinamos estrategia, diseño y tecnología, no hacemos “una web más”.
+            En Éclat combinamos estrategia, diseño y tecnología, manteniendo intacto el espíritu de tu negocio.
           </p>
         </div>
       </div>
