@@ -51,9 +51,9 @@ export default function PoliticaCookies() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4 text-white">2. ¿Cómo utiliza Éclat Studio las cookies?</h2>
+            <h2 className="text-2xl font-semibold mb-4 text-white">2. ¿Cómo utiliza Éclat Core las cookies?</h2>
             <p className="text-white/85 mb-4">
-              En Éclat Studio utilizamos cookies para mejorar su experiencia de navegación, analizar el tráfico del sitio web y personalizar el contenido. Las cookies nos ayudan a entender cómo los usuarios interactúan con nuestro sitio web para poder mejorarlo.
+              En Éclat Core utilizamos cookies para mejorar su experiencia de navegación, analizar el tráfico del sitio web y personalizar el contenido. Las cookies nos ayudan a entender cómo los usuarios interactúan con nuestro sitio web para poder mejorarlo.
             </p>
           </section>
 
@@ -116,7 +116,7 @@ export default function PoliticaCookies() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4 text-white">7. Actualizaciones de esta política</h2>
             <p className="text-white/85 mb-4">
-              Éclat Studio puede actualizar esta Política de Cookies ocasionalmente. Le recomendamos que revise esta página periódicamente para estar informado de cualquier cambio.
+              Éclat Core puede actualizar esta Política de Cookies ocasionalmente. Le recomendamos que revise esta página periódicamente para estar informado de cualquier cambio.
             </p>
           </section>
 

@@ -295,8 +295,8 @@ const Contact = memo(function Contact() {
                                             </svg>
                                         </div>
                                         <div>
-                                            <p className="text-white text-lg font-medium">Email</p>
-                                            <p className="text-gray-300 text-lg ">eclat@eclatcore.com</p>
+                                            <a href="mailto:eclat@eclatcore.com" className="text-white text-lg font-medium block">Email</a>
+                                            <a href="mailto:eclat@eclatcore.com" className="text-gray-300 text-lg ">eclat@eclatcore.com</a>
                                         </div>
                                     </div>
 
@@ -307,8 +307,8 @@ const Contact = memo(function Contact() {
                                             </svg>
                                         </div>
                                         <div>
-                                            <p className="text-white font-medium text-lg ">Teléfono</p>
-                                            <p className="text-gray-300 text-lg ">+34 613 80 97 06</p>
+                                            <a href="tel:+34613809706" className="block text-white font-medium text-lg ">Teléfono</a>
+                                            <a href="tel:+34613809706" className="text-gray-300 text-lg ">+34 613 80 97 06</a>
                                         </div>
                                     </div>
 

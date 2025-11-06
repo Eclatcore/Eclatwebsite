@@ -29,7 +29,7 @@ const exo = Exo({
 
 
 export const metadata: Metadata = {
-  title: "Eclát",
+  title: "Éclat",
   description: "La empresa que le da brillo a tu negocio",
 };
 

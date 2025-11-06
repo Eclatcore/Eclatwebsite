@@ -49,7 +49,7 @@ export default function PoliticaPrivacidad() {
               En cumplimiento del Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales, le informamos de que los datos personales que nos proporcione serán tratados por:
             </p>
             <ul className="text-white/85 mb-4 list-disc pl-6">
-              <li><strong>Responsable:</strong> Éclat Studio</li>
+              <li><strong>Responsable:</strong> Éclat Core</li>
               <li><strong>Domicilio:</strong> España</li>
               <li><strong>Teléfono:</strong> +34 613 80 97 06</li>
               <li><strong>Email:</strong> eclat@eclatcore.com</li>
@@ -127,7 +127,7 @@ export default function PoliticaPrivacidad() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4 text-white">7. Seguridad de los Datos</h2>
             <p className="text-white/85 mb-4">
-              Éclat Studio ha adoptado las medidas técnicas y organizativas necesarias para garantizar la seguridad de los datos personales y evitar su alteración, pérdida, tratamiento o acceso no autorizado, habida cuenta del estado de la tecnología, la naturaleza de los datos almacenados y los riesgos a que están expuestos.
+              Éclat Core ha adoptado las medidas técnicas y organizativas necesarias para garantizar la seguridad de los datos personales y evitar su alteración, pérdida, tratamiento o acceso no autorizado, habida cuenta del estado de la tecnología, la naturaleza de los datos almacenados y los riesgos a que están expuestos.
             </p>
           </section>
 
@@ -141,7 +141,7 @@ export default function PoliticaPrivacidad() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4 text-white">9. Modificaciones</h2>
             <p className="text-white/85 mb-4">
-              Éclat Studio se reserva el derecho a modificar esta Política de Privacidad para adaptarla a novedades legislativas, jurisprudenciales o en la interpretación de la Agencia Española de Protección de Datos. Dichas modificaciones serán notificadas a los usuarios.
+              Éclat Core se reserva el derecho a modificar esta Política de Privacidad para adaptarla a novedades legislativas, jurisprudenciales o en la interpretación de la Agencia Española de Protección de Datos. Dichas modificaciones serán notificadas a los usuarios.
             </p>
           </section>
 
