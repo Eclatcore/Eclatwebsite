@@ -1,0 +1,28 @@
+{
+  "name": "Éclat - Diseño Web y Estrategia Digital",
+  "short_name": "Éclat",
+  "description": "Transformamos tu negocio con diseño web profesional, desarrollo UX/UI y estrategia digital",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#8b5cf6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["business", "design", "technology"],
+  "lang": "es-ES",
+  "dir": "ltr"
+}
+

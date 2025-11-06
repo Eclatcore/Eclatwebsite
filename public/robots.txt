@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://eclatcore.com/sitemap.xml
+
+# Disallow admin and API routes
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Allow important pages
+Allow: /
+Allow: /legal/
+Allow: /legal/politica-de-privacidad
+Allow: /legal/politica-de-cookies
+Allow: /legal/aviso-legal
+
