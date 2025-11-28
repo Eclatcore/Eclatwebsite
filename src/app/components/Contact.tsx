@@ -321,7 +321,7 @@ const Contact = memo(function Contact() {
                                         </div>
                                         <div>
                                             <p className="text-white font-medium text-lg ">Ubicación</p>
-                                            <p className="text-gray-300 text-lg ">Valencia, España</p>
+                                            <p className="text-gray-300 text-lg ">España</p>
                                         </div>
                                     </div>
                                 </div>
