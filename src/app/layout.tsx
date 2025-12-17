@@ -32,10 +32,10 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://eclatcore.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Éclat | Diseño Web y Estrategia Digital en Valencia",
-    template: "%s | Éclat"
+    default: "Éclat Core | Diseño Web y Estrategia Digital en Valencia",
+    template: "%s | Éclat Core"
   },
-  description: "Transformamos tu negocio con diseño web profesional, desarrollo UX/UI y estrategia digital. Creamos experiencias digitales que generan resultados reales. Auditoría UX gratuita disponible.",
+  description: "Éclat Core: Transformamos tu negocio con diseño web profesional, desarrollo UX/UI y estrategia digital. Creamos experiencias digitales que generan resultados reales. Auditoría UX gratuita disponible.",
   keywords: [
     "diseño web",
     "desarrollo web",
@@ -78,9 +78,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_ES",
     url: siteUrl,
-    siteName: "Éclat",
-    title: "Éclat | Diseño Web y Estrategia Digital en Valencia",
-    description: "Transformamos tu negocio con diseño web profesional, desarrollo UX/UI y estrategia digital. Creamos experiencias digitales que generan resultados reales.",
+    siteName: "Éclat Core",
+    title: "Éclat Core | Diseño Web y Estrategia Digital en Valencia",
+    description: "Éclat Core: Transformamos tu negocio con diseño web profesional, desarrollo UX/UI y estrategia digital. Creamos experiencias digitales que generan resultados reales.",
     images: [
       {
         url: `${siteUrl}/og-image.jpg`,
@@ -92,8 +92,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Éclat | Diseño Web y Estrategia Digital en Valencia",
-    description: "Transformamos tu negocio con diseño web profesional, desarrollo UX/UI y estrategia digital.",
+    title: "Éclat Core | Diseño Web y Estrategia Digital en Valencia",
+    description: "Éclat Core: Transformamos tu negocio con diseño web profesional, desarrollo UX/UI y estrategia digital.",
     images: [`${siteUrl}/og-image.jpg`],
     creator: "@eclatcore",
   },

@@ -25,7 +25,7 @@ export default function Home() {
       <Services />
       <Timeline />
       <WhyChooseUs />
-      <Testimonials />
+      <Showcase />
       <Plans/>
       <Contact />
       <Footer></Footer>

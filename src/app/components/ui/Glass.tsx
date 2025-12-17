@@ -17,6 +17,9 @@ const GlassMedia = memo(function GlassMedia(props: Props) {
       window.addEventListener("resize", update);
       return () => window.removeEventListener("resize", update);
     }, []);
+    
+    // Forzar actualización cuando cambia el src
+    const videoSrc = USE_VIDEO ? props.src : "/videos/bg-aboutus.mp4";
   return (
     <section className="">
     {/* CONTENIDO */}
@@ -69,13 +72,14 @@ const GlassMedia = memo(function GlassMedia(props: Props) {
               
               {/* Video de fondo optimizado */}
               <video 
-                src={props.type === "video" ? props.src : "/videos/bg-aboutus.mp4"} 
+                key={videoSrc}
+                src={videoSrc} 
                 autoPlay 
                 loop 
                 muted 
                 playsInline 
-                preload="metadata"
-                className="h-full w-full object-cover rounded-2xl"
+                preload="auto"
+                className="absolute inset-0 h-full w-full object-cover rounded-2xl z-0"
                 style={{
                   filter: 'brightness(1.1) contrast(1.1) saturate(1.2)'
                 }}
@@ -96,6 +100,16 @@ const GlassMedia = memo(function GlassMedia(props: Props) {
     </div>
     </section>
   );
+}, (prevProps, nextProps) => {
+  // Comparar props para determinar si debe re-renderizar
+  if (prevProps.type !== nextProps.type) return false;
+  if (prevProps.type === "video" && nextProps.type === "video") {
+    return prevProps.src === nextProps.src;
+  }
+  if (prevProps.type === "image" && nextProps.type === "image") {
+    return prevProps.src === nextProps.src;
+  }
+  return true;
 });
 
 export default GlassMedia;
