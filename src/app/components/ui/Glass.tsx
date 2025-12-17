@@ -10,8 +10,6 @@ type Props =
 const GlassMedia = memo(function GlassMedia(props: Props) {
     const USE_VIDEO = props.type === "video";
     const [isMobile, setIsMobile] = useState(false);
-    const [videoError, setVideoError] = useState(false);
-    const [videoLoaded, setVideoLoaded] = useState(false);
 
     useEffect(() => {
       const update = () => setIsMobile(window.innerWidth < 768);
@@ -19,9 +17,6 @@ const GlassMedia = memo(function GlassMedia(props: Props) {
       window.addEventListener("resize", update);
       return () => window.removeEventListener("resize", update);
     }, []);
-    
-    // Forzar actualización cuando cambia el src
-    const videoSrc = USE_VIDEO ? props.src : "/videos/bg-aboutus.mp4";
   return (
     <section className="">
     {/* CONTENIDO */}
@@ -73,30 +68,18 @@ const GlassMedia = memo(function GlassMedia(props: Props) {
               </div>
               
               {/* Video de fondo optimizado */}
-              {!videoError ? (
-                <video 
-                  key={videoSrc}
-                  src={videoSrc} 
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline 
-                  preload="metadata"
-                  onLoadedData={() => setVideoLoaded(true)}
-                  onError={() => {
-                    console.error('Error loading video:', videoSrc);
-                    setVideoError(true);
-                  }}
-                  className={`absolute inset-0 h-full w-full object-cover rounded-2xl z-0 transition-opacity duration-300 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
-                  style={{
-                    filter: 'brightness(1.1) contrast(1.1) saturate(1.2)'
-                  }}
-                />
-              ) : (
-                <div className="absolute inset-0 h-full w-full bg-gradient-to-br from-[#8b5cf6]/20 to-[#ec4899]/20 rounded-2xl z-0 flex items-center justify-center">
-                  <p className="text-white/50 text-sm">Video no disponible</p>
-                </div>
-              )}
+              <video 
+                src={props.type === "video" ? props.src : "/videos/video-prueba.mp4"} 
+                autoPlay 
+                loop 
+                muted 
+                playsInline 
+                preload="metadata"
+                className="h-full w-full object-cover rounded-2xl"
+                style={{
+                  filter: 'brightness(1.1) contrast(1.1) saturate(1.2)'
+                }}
+              />
               
               {/* Overlay sutil para mejor contraste */}
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/30" />
@@ -113,16 +96,6 @@ const GlassMedia = memo(function GlassMedia(props: Props) {
     </div>
     </section>
   );
-}, (prevProps, nextProps) => {
-  // Comparar props para determinar si debe re-renderizar
-  if (prevProps.type !== nextProps.type) return false;
-  if (prevProps.type === "video" && nextProps.type === "video") {
-    return prevProps.src === nextProps.src;
-  }
-  if (prevProps.type === "image" && nextProps.type === "image") {
-    return prevProps.src === nextProps.src;
-  }
-  return true;
 });
 
 export default GlassMedia;

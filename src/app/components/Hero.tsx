@@ -78,7 +78,8 @@ const Hero = memo(function Hero() {
           transition={isMobile ? { duration: 0 } : { delay: 0.3, duration: 0.4 }}
           className="mt-4 lg:mt-8 w-full flex justify-center"
         >
-          <Glass type="video" src="/videos/hero-video-eclat.mp4" />
+       
+          <Glass type="video" src="/videos/video-prueba.mp4" />
           {/* o con video:
         <GlassBox type="video" src="/media/demo.mp4" poster="/media/poster.jpg" />
         */}
