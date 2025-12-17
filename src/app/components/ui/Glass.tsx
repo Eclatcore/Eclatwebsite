@@ -10,6 +10,8 @@ type Props =
 const GlassMedia = memo(function GlassMedia(props: Props) {
     const USE_VIDEO = props.type === "video";
     const [isMobile, setIsMobile] = useState(false);
+    const [videoError, setVideoError] = useState(false);
+    const [videoLoaded, setVideoLoaded] = useState(false);
 
     useEffect(() => {
       const update = () => setIsMobile(window.innerWidth < 768);
@@ -71,19 +73,30 @@ const GlassMedia = memo(function GlassMedia(props: Props) {
               </div>
               
               {/* Video de fondo optimizado */}
-              <video 
-                key={videoSrc}
-                src={videoSrc} 
-                autoPlay 
-                loop 
-                muted 
-                playsInline 
-                preload="auto"
-                className="absolute inset-0 h-full w-full object-cover rounded-2xl z-0"
-                style={{
-                  filter: 'brightness(1.1) contrast(1.1) saturate(1.2)'
-                }}
-              />
+              {!videoError ? (
+                <video 
+                  key={videoSrc}
+                  src={videoSrc} 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline 
+                  preload="metadata"
+                  onLoadedData={() => setVideoLoaded(true)}
+                  onError={() => {
+                    console.error('Error loading video:', videoSrc);
+                    setVideoError(true);
+                  }}
+                  className={`absolute inset-0 h-full w-full object-cover rounded-2xl z-0 transition-opacity duration-300 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
+                  style={{
+                    filter: 'brightness(1.1) contrast(1.1) saturate(1.2)'
+                  }}
+                />
+              ) : (
+                <div className="absolute inset-0 h-full w-full bg-gradient-to-br from-[#8b5cf6]/20 to-[#ec4899]/20 rounded-2xl z-0 flex items-center justify-center">
+                  <p className="text-white/50 text-sm">Video no disponible</p>
+                </div>
+              )}
               
               {/* Overlay sutil para mejor contraste */}
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/30" />
