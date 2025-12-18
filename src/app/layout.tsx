@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { DM_Sans, Montserrat, Exo } from "next/font/google";
+import CookieBanner from "./components/CookieBanner";
 
 
 const dmSans = DM_Sans({
@@ -141,6 +142,7 @@ export default function RootLayout({
         className={`${dmSans.variable} ${montserrat.variable} ${exo.variable} antialiased bg-black`}
       >
         {children}
+        <CookieBanner />
       </body>
     </html>
   );

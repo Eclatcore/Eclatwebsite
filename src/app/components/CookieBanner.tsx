@@ -6,19 +6,38 @@ import Link from "next/link";
 export default function CookieBanner() {
   const [showBanner, setShowBanner] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     // Verificar si el usuario ya ha dado su consentimiento
-    const cookieConsent = localStorage.getItem("cookieConsent");
-    if (!cookieConsent) {
-      // Esperar un poco antes de mostrar el banner para mejor UX
+    // Usar try-catch para evitar errores en SSR o si localStorage no está disponible
+    try {
+      if (typeof window !== "undefined") {
+        const cookieConsent = localStorage.getItem("cookieConsent");
+        if (!cookieConsent) {
+          // Mostrar el banner inmediatamente
+          setShowBanner(true);
+          // Pequeño delay para la animación
+          const timer = setTimeout(() => {
+            setIsVisible(true);
+          }, 300);
+          return () => clearTimeout(timer);
+        }
+      }
+    } catch (error) {
+      // Si hay error con localStorage, mostrar el banner de todas formas
+      console.error("Error checking cookie consent:", error);
+      setShowBanner(true);
       const timer = setTimeout(() => {
-        setShowBanner(true);
         setIsVisible(true);
-      }, 1000);
+      }, 300);
       return () => clearTimeout(timer);
     }
   }, []);
+
+  // No renderizar hasta que esté montado en el cliente
+  if (!mounted) return null;
 
   const handleAccept = () => {
     localStorage.setItem("cookieConsent", "accepted");
@@ -50,7 +69,7 @@ export default function CookieBanner() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className="fixed bottom-0 left-0 right-0 z-50 p-4 lg:p-6"
+          className="fixed bottom-0 left-0 right-0 z-[9999] p-4 lg:p-6"
         >
           <div className="mx-auto">
             <div className="relative rounded-2xl border border-white/15 bg-black/90 backdrop-blur-xl backdrop-saturate-150 shadow-2xl p-6 lg:p-8">
