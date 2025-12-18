@@ -41,7 +41,7 @@ const Showcase = memo(function Showcase() {
           className="font-heading text-4xl md:text-7xl lg:text-6xl leading-tight tracking-tight text-white"
         >
           Descubre el futuro del
-          <br className="lg:block hidden" />
+          <br/>
           <span className="bg-gradient-to-r from-[#8b5cf6] via-[#a78bfa] to-[#ec4899] bg-clip-text text-transparent">
             diseño digital
           </span>
@@ -65,10 +65,10 @@ const Showcase = memo(function Showcase() {
           className="flex flex-wrap items-center justify-center gap-4"
         >
           <a
-            href="https://eclatcore.site/"
+            href="https://eclatcore.site/" target="_blank" rel="noopener noreferrer"
             className="group relative inline-flex items-center justify-center rounded-full px-8 py-3.5 font-semibold text-white ring-2 ring-[#a78bfa]/70 bg-gradient-to-r from-[#8b5cf6]/70 via-[#8b5cf6]/45 to-[#8b5cf6]/25 shadow-[0_12px_40px_-16px_rgba(139,92,246,0.75)] transition-all duration-300 hover:from-[#8b5cf6]/80 hover:via-[#8b5cf6]/55 hover:to-[#8b5cf6]/35 hover:shadow-[0_16px_50px_-14px_rgba(139,92,246,0.8)] hover:ring-[#a78bfa]/80 hover:scale-[1.02] active:scale-[0.98]"
           >
-            <span className="relative z-10 drop-shadow-[0_2px_8px_rgba(139,92,246,0.6)]">Ver web de demo</span>
+            <span className="relative z-10 drop-shadow-[0_2px_8px_rgba(139,92,246,0.6)]">Ver web demo</span>
             <span className="pointer-events-none absolute inset-0 overflow-hidden rounded-full">
               <span className="absolute -left-10 top-0 h-full w-10 translate-x-0 skew-x-[-20deg] bg-[#8b5cf6]/60 blur-md opacity-0 transition-transform duration-700 ease-out group-hover:translate-x-[140%] group-hover:opacity-70"></span>
               {/* outer glow (idle fuerte, hover más intenso) */}

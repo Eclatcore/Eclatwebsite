@@ -65,8 +65,8 @@ const Hero = memo(function Hero() {
               <span className="absolute -inset-1 rounded-full bg-[#8b5cf6]/30 blur-2xl opacity-100 transition-opacity duration-300 group-hover:bg-[#8b5cf6]/40" />
             </span>
           </a>
-          <a className="btn-ghost px-16 mt-2 lg:mt-0" href="#planes">
-            Ver planes
+          <a className="btn-ghost px-16 mt-2 lg:mt-0" href="https://eclatcore.site/" target="_blank" rel="noopener noreferrer">
+            Ver web demo
           </a>
         </motion.div>
 
