@@ -11,10 +11,9 @@ const plansData = [
         maintenance: "Todo el sitio web + mantenimiento opcional de 15€/mes si prefieres que lo gestionemos todo",
         features: [
             "Hasta 4 secciones personalizadas",
-            "Diseño responsive (adaptado a todos los dispositivos)",
-            "SEO para mejorar visibilidad en buscadores",
+            "Diseño adaptado a todos los dispositivos",
+            "Vsibilidad en buscadores",
             "Formulario de contacto profesional",
-            "Hosting incluido durante 1 año",
             "Regalo de bienvenida: Análisis de marca y asesoría de color y tipografía",
             "Soporte continuo durante el proceso de creación"
         ],
@@ -28,12 +27,11 @@ const plansData = [
         maintenance: "Todo el sitio web + mantenimiento opcional 25€/mes si prefieres que lo gestionemos todo",
         features: [
             "Sitio web profesional totalmente personalizado",
-            "Diseño responsive (adaptado a todos los dispositivos)",
-            "SEO para mejorar visibilidad en buscadores",
-            "Hosting incluido durante 1 año",
+            "Diseño adaptado a todos los dispositivos",
+            "Visibilidad en buscadores",
             "Actualizaciones por temporada (Navidad, verano, Halloween, etc.)",
-            "Análisis mensual de tráfico durante 12 meses",
-            "Éclat Writer: genera contenido semanal con IA para mantener tu web activa y visible.",
+            "Análisis de tráfico durante 12 meses",
+            "Éclat Writer: contenido semanal con IA para mantener tu web visible.",
             "Soporte y acompañamiento continuo"
         ],
         buttonText: "Quiero empezar ahora",
@@ -47,12 +45,10 @@ const plansData = [
         maintenance: "Todo el sitio web + mantenimiento opcional de 40€/mes si prefieres que lo gestionemos todo",
         features: [
             "Web ilimitada con diseño premium UX/UI",
-            "Diseño responsive (adaptado a todos los dispositivos)",
+            "Diseño adaptado a todos los dispositivos",
             "SEO avanzado y auditoría inicial",
             "E-commerce (tienda online)",
-            "Hosting incluido durante 2 años",
             "Actualizaciones de diseño por temporada y eventos",
-            "Reportes trimestrales de posicionamiento SEO y rendimiento",
             "Soporte técnico y estratégico prioritario",
             "Branding digital (logo, colores, guía visual)",
             "Éclat Writer Pro: crea y programa contenido inteligente con IA alineado a tu estrategia.   "

@@ -98,7 +98,7 @@ export default function PlanCard({
 
         {/* Features - contenido principal que se expande */}
         <div className="flex-1 mb-6 sm:mb-8">
-          <ul className="text-white/80 space-y-2 sm:space-y-3">
+          <ul className="text-white/80 space-y-2 sm:space-y-3 text-sm">
             {features.map((feature, index) => (
               <FeatureItem key={index} text={feature} />
             ))}
