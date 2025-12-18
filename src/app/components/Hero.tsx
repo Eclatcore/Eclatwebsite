@@ -31,9 +31,9 @@ const Hero = memo(function Hero() {
           initial={isMobile ? { opacity: 1 } : { opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mt-10 backdrop:font-heading text-3xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-white"
+          className="mt-4 lg:mt-10 backdrop:font-heading text-2xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-white"
         >
-          <span className="block">Transformamos tu negocio con </span> 
+          <span className="lg:block">Transformamos tu negocio con </span> 
           <span className="bg-gradient-to-r from-primary via-primary/100 to-primary-light bg-clip-text text-transparent">
           diseño web y estrategia inteligente.
           </span>
@@ -43,7 +43,7 @@ const Hero = memo(function Hero() {
           initial={isMobile ? { opacity: 1 } : { opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.1, duration: 0.4 }}
-          className="mt-6 mb-8 max-w-2xl font-body text-lg lg:text-xl text-white/80 mx-auto"
+          className="mt-6 mb-8 max-w-2xl font-body text-base lg:text-xl text-white/80 mx-auto"
         >
           En Éclat combinamos diseño UX/UI, desarrollo web y visión de negocio para crear experiencias digitales generan resultados reales.
         </motion.p>
