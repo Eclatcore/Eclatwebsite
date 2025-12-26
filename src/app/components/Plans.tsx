@@ -15,7 +15,8 @@ const plansData = [
             "Vsibilidad en buscadores",
             "Formulario de contacto profesional",
             "Regalo de bienvenida: Análisis de marca y asesoría de color y tipografía",
-            "Soporte continuo durante el proceso de creación"
+            "Soporte continuo durante el proceso de creación",
+            "No incluye dominio"
         ],
         buttonText: "Elegir plan",
         delay: 0
@@ -32,7 +33,8 @@ const plansData = [
             "Actualizaciones por temporada (Navidad, verano, Halloween, etc.)",
             "Análisis de tráfico durante 12 meses",
             "Éclat Writer: contenido semanal con IA para mantener tu web visible.",
-            "Soporte y acompañamiento continuo"
+            "Soporte y acompañamiento continuo",
+            "No incluye dominio"
         ],
         buttonText: "Quiero empezar ahora",
         isPremium: true,
@@ -51,7 +53,8 @@ const plansData = [
             "Actualizaciones de diseño por temporada y eventos",
             "Soporte técnico y estratégico prioritario",
             "Branding digital (logo, colores, guía visual)",
-            "Éclat Writer Pro: crea y programa contenido inteligente con IA alineado a tu estrategia.   "
+            "Éclat Writer Pro: crea y programa contenido inteligente con IA alineado a tu estrategia.",
+            "No incluye dominio"
         ],
         buttonText: "Elegir plan",
         delay: 0.2
