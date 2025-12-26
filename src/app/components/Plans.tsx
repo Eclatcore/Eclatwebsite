@@ -16,7 +16,7 @@ const plansData = [
             "Formulario de contacto profesional",
             "Regalo de bienvenida: Análisis de marca y asesoría de color y tipografía",
             "Soporte continuo durante el proceso de creación",
-            "No incluye dominio"
+            "Este paquete no incluye dominio"
         ],
         buttonText: "Elegir plan",
         delay: 0
@@ -34,7 +34,7 @@ const plansData = [
             "Análisis de tráfico durante 12 meses",
             "Éclat Writer: contenido semanal con IA para mantener tu web visible.",
             "Soporte y acompañamiento continuo",
-            "No incluye dominio"
+            "Este paquete no incluye dominio"
         ],
         buttonText: "Quiero empezar ahora",
         isPremium: true,
@@ -54,7 +54,7 @@ const plansData = [
             "Soporte técnico y estratégico prioritario",
             "Branding digital (logo, colores, guía visual)",
             "Éclat Writer Pro: crea y programa contenido inteligente con IA alineado a tu estrategia.",
-            "No incluye dominio"
+            "Este paquete no incluye dominio"
         ],
         buttonText: "Elegir plan",
         delay: 0.2
